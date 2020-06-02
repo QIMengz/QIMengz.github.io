@@ -2,32 +2,29 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-    <title type="text">Hugo 主题 MemE</title>
-    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2020-06-01T20:21:54&#43;08:00</updated>
-    <id>https://example.com/</id>
-    <link rel="alternate" type="text/html" href="https://example.com/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://example.com/atom.xml" />
+    <title type="text">Zxx</title>
+    <subtitle type="html">Zxx快乐学习</subtitle>
+    <updated>2020-06-02T19:49:58&#43;08:00</updated>
+    <id>https://qimengz.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://qimengz.github.io/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://qimengz.github.io/atom.xml" />
     <author>
-            <name>reuixiy</name>
-            <uri>https://example.com/</uri>
-            
-                <email>reuixiy@gmail.com</email>
+            <name>Zxx</name>
+            <uri>https://qimengz.github.io/</uri>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.72.0">Hugo</generator>
         <entry>
             <title type="text">试着去理解虚拟DOM</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/" />
-            <id>https://example.com/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/" />
+            <id>https://qimengz.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</id>
             <updated>2020-06-01T19:49:55&#43;08:00</updated>
             <published>2019-08-20T17:57:12&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">去掉虚拟两个字，先了解下什么是DOM？ 在原生JS中有DOM操作，就是使用浏览器提供的……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">去掉虚拟两个字，先了解下什么是DOM？ 在原生JS中有DOM操作，就是使用浏览器提供的一些API，选中一个元素对它进行操作，比如说：增加一个属性、增加一个孩子、修改它里面的内容、改变它的位置，直接对DO……
     
     </summary>
             
@@ -210,16 +207,15 @@ patchElement(root, vNode1，vNode2)
     
         <entry>
             <title type="text">Cookie是什么</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/" />
-            <id>https://example.com/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/" />
+            <id>https://qimengz.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</id>
             <updated>2020-06-01T19:51:50&#43;08:00</updated>
             <published>2019-07-05T14:36:40&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">维基百科定义 Cookie（复数形态Cookies），又称为“小甜饼”。类型为“小型文……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">维基百科定义 Cookie（复数形态Cookies），又称为“小甜饼”。类型为“小型文本文件”[1]，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。由网……
     
     </summary>
             
@@ -265,16 +261,15 @@ patchElement(root, vNode1，vNode2)
     
         <entry>
             <title type="text">JS高级基础知识小结</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/" />
-            <id>https://example.com/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/" />
+            <id>https://qimengz.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</id>
             <updated>2020-06-01T19:53:55&#43;08:00</updated>
             <published>2019-06-29T15:31:03&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">原型与原型链 var object = {} object.__proto__ === Object.prototype // 为 true var fn = function(){} fn.__proto__ === Function.prototype // 为 true fn.__proto__.__proto__ === Object.prototype // 为 true var array = [] array.__proto__ === Array.prototype // 为 true……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">原型与原型链 var object = {} object.__proto__ === Object.prototype // 为 true var fn = function(){} fn.__proto__ === Function.prototype // 为 true fn.__proto__.__proto__ === Object.prototype // 为 true var array = [] array.__proto__ === Array.prototype // 为 true array.__proto__.__proto__ === Object.prototype // 为 true Function.__proto__ === Function.prototype // 为 true Array.__proto__ === Function.prototype // 为 true Object.__proto__ === Function.prototype // 为 true true.__proto__ === Boolean.prototype // 为 true Function.prototype.__proto__ === Object.prototype // 为 true 面向对象new与this function fn(){ console.log(this) } new fn() new fn() 会执……
     
     </summary>
             
@@ -436,16 +431,15 @@ var person = new Human(&#39;qq&#39;)
     
         <entry>
             <title type="text">知识小汇总</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/" />
-            <id>https://example.com/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/" />
+            <id>https://qimengz.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</id>
             <updated>2020-06-01T19:48:47&#43;08:00</updated>
             <published>2019-06-06T17:35:48&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">请写出一个符合 W3C 规范的 HTML 文件 要求 页面标题为「我的页面」 页面中引入了一个外部 CSS 文件，文……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">请写出一个符合 W3C 规范的 HTML 文件 要求 页面标题为「我的页面」 页面中引入了一个外部 CSS 文件，文件路径为 /style.css 页面中引入了另一个外部 CSS 文件，路径为 /print.css，该文件仅在打印时生效 页面中引入了另一个外部 CSS 文件……
     
     </summary>
             
@@ -852,16 +846,15 @@ function unique(array) {
     
         <entry>
             <title type="text">自己写一个简版jQuery</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/" />
-            <id>https://example.com/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/" />
+            <id>https://qimengz.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</id>
             <updated>2020-06-01T19:50:54&#43;08:00</updated>
             <published>2019-04-24T18:49:36&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">为了便于学习与理解jQuery，自己尝试去写一个只有两个API的简版jQuery。 什……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">为了便于学习与理解jQuery，自己尝试去写一个只有两个API的简版jQuery。 什么是JQuery jQuery是js的一个工具库，由John Resig在2006年发布。 j代表JavaScript，q……
     
     </summary>
             
@@ -969,16 +962,15 @@ $div.setText(&#39;hi&#39;) // 可将所有 div 的 textContent 变为 hi
     
         <entry>
             <title type="text">JS函数的五种声明方式</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/" />
-            <id>https://example.com/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/" />
+            <id>https://qimengz.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</id>
             <updated>2020-06-01T19:54:15&#43;08:00</updated>
             <published>2019-04-17T17:58:27&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">具名函数 function f(x,y){return x +y } 关键字+函数名+参数+{} function 和var意思差不多，表示声明一个特殊的……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">具名函数 function f(x,y){return x +y } 关键字+函数名+参数+{} function 和var意思差不多，表示声明一个特殊的变量（对象） 匿名函数 f = function(x,y){return x +y } 给变量赋值一个具名函数 f = function n(x,y){return x +y } 函数n的作用域只限函数内，和具名函数不同，体现了……
     
     </summary>
             
@@ -1037,16 +1029,15 @@ n(3)
     
         <entry>
             <title type="text">JS数组API运用相关代码总结</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/" />
-            <id>https://example.com/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/" />
+            <id>https://qimengz.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</id>
             <updated>2020-06-01T19:55:18&#43;08:00</updated>
             <published>2019-04-15T19:13:22&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">自己总结代码题 1.使得 students 按分数的高低从大到小排列 var students = [&#39;小明&#39;,&#39;小红&#39;,&#39;小花&#39;……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">自己总结代码题 1.使得 students 按分数的高低从大到小排列 var students = [&#39;小明&#39;,&#39;小红&#39;,&#39;小花&#39;] var scores = { 小明: 59, 小红: 99, 小花: 80 } students.sort(???) 请填写 ??? 使得 students 按分数的高低从大到小排列 function ( x , y ) { return scores[y]-scores[x] } var a = [1,2,3,4,5,6,7,8,9] a.filter(???).map(???) // [4,16,36,64] 获取所……
     
     </summary>
             
@@ -1170,16 +1161,15 @@ a.join(&#39;-&#39;); // &#39;Wind-Rain-Fire&#39;
     
         <entry>
             <title type="text">JS的数组与伪数组的区别</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" />
-            <id>https://example.com/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+            <id>https://qimengz.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
             <updated>2020-06-01T19:53:30&#43;08:00</updated>
             <published>2019-04-13T17:28:10&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在JavaScript中，除了6种原始数据类型之外，其他所有的都是对象，包括函数（F……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在JavaScript中，除了6种原始数据类型之外，其他所有的都是对象，包括函数（Function）。 基本数据类型：String,boolean,Number,Undefined, Null,Symbol 引用数据类型：Ob……
     
     </summary>
             
@@ -1344,16 +1334,15 @@ var makeArray = function(obj) {
     
         <entry>
             <title type="text">常见DOM以及API总结</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/" />
-            <id>https://example.com/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/" />
+            <id>https://qimengz.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</id>
             <updated>2020-06-01T19:48:02&#43;08:00</updated>
             <published>2019-04-12T10:41:20&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">DOM DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">DOM DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。 浏览器会根据 DOM 模型，将结构化文档（比如 HTML 和 X……
     
     </summary>
             
@@ -1922,16 +1911,15 @@ element.id = &amp;quot;test&amp;quot;;
     
         <entry>
             <title type="text">原型与原型链</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
-            <id>https://example.com/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
+            <id>https://qimengz.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</id>
             <updated>2020-06-01T19:50:19&#43;08:00</updated>
             <published>2019-04-06T19:12:56&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">再讲原型与原型链的前提下先讲些概念方便理解 对象是什么 面向对象编程（Object Oriented Pr……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">再讲原型与原型链的前提下先讲些概念方便理解 对象是什么 面向对象编程（Object Oriented Programming，缩写为 OOP）是目前主流的编程范式。它将真实世界各种复杂的关系，抽象为一个个对象，然后由对象之间……
     
     </summary>
             
@@ -2228,16 +2216,15 @@ c.constructor.prototype === p // true
     
         <entry>
             <title type="text">JS里的数据类型转换</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
-            <id>https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+            <id>https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</id>
             <updated>2020-06-01T19:54:57&#43;08:00</updated>
             <published>2019-04-04T19:52:50&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">类型转换 本文分别讲下数据类型之间的相互转换 转换为string 数据类型.toStrin……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">类型转换 本文分别讲下数据类型之间的相互转换 转换为string 数据类型.toString 数据类型 string number toString boolean toString symbol 不研究 null 报错 undefined 报错 object toString 2. 数据类型 + &#39;&#39; &#39;&#39; + 数据类型 3. window.String(/*数据类型*/……
     
     </summary>
             
@@ -2353,16 +2340,15 @@ c.constructor.prototype === p // true
     
         <entry>
             <title type="text">JS里的数据类型</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" />
-            <id>https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" />
+            <id>https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
             <updated>2020-06-01T19:54:40&#43;08:00</updated>
             <published>2019-04-03T18:42:20&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">JS里的7种数据类型 JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">JS里的7种数据类型 JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 新增的第七种 Symbol 类型的值，不描述。） 数值（number）：整数和小数（比如1和3.14） 字符……
     
     </summary>
             
@@ -2486,16 +2472,15 @@ null返回object。
     
         <entry>
             <title type="text">CSS布局</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/css%E5%B8%83%E5%B1%80/" />
-            <id>https://example.com/posts/css%E5%B8%83%E5%B1%80/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/css%E5%B8%83%E5%B1%80/" />
+            <id>https://qimengz.github.io/posts/css%E5%B8%83%E5%B1%80/</id>
             <updated>2020-06-01T19:52:18&#43;08:00</updated>
             <published>2019-03-20T20:53:01&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CSS布局 float 布局 float 布局应该是目前各大网站用的最多的一种布局方式了，但是也特别复杂，这……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CSS布局 float 布局 float 布局应该是目前各大网站用的最多的一种布局方式了，但是也特别复杂，这里详细讲一下 首先，什么是浮动？ 浮动元素是脱离文档流的，但不脱离文本流，这是什么意思呢，用过 word 的应该知道有一种图片环绕……
     
     </summary>
             
@@ -2790,16 +2775,15 @@ null返回object。
     
         <entry>
             <title type="text">如何用CSS画一个太极</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/" />
-            <id>https://example.com/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/" />
+            <id>https://qimengz.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</id>
             <updated>2020-06-01T19:49:30&#43;08:00</updated>
             <published>2019-03-19T20:58:12&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">本文将介绍如何用CSS画一个太极图 首先 画一个方块黑白各一半 body { background-color: lightslategray; } .yy { width: 0px; height: 600px; border-left: 300px……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">本文将介绍如何用CSS画一个太极图 首先 画一个方块黑白各一半 body { background-color: lightslategray; } .yy { width: 0px; height: 600px; border-left: 300px solid black; border-right: 300px solid white; } 如图 再画白色部分的园（先画方块） .yy::before { content: &#39;&#39;; display: block; width: 100px; height: 100px; border: 100px solid black ; border-image-repeat: } 如图 再设置它的半径为100% border-image-repeat: 图3 再……
     
     </summary>
             
@@ -2900,16 +2884,15 @@ null返回object。
     
         <entry>
             <title type="text">HTML常用标签</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
-            <id>https://example.com/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+            <id>https://qimengz.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</id>
             <updated>2020-06-01T19:52:45&#43;08:00</updated>
             <published>2019-03-17T15:59:25&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">1.HTML5头部结构 【DOCTYPE html】 声明文档类型为HTML5文件。 文档声……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">1.HTML5头部结构 【DOCTYPE html】 声明文档类型为HTML5文件。 文档声明在HTML5文档必不可少，且必须放在文档的第一行。 【meta标签】 1-charset属性：单独使用，设置文档字符及……
     
     </summary>
             
@@ -3381,16 +3364,15 @@ auto 自动，根据文字多少自动决定是否显示滚动条（默认样式
     
         <entry>
             <title type="text">HTML简介</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/html%E7%AE%80%E4%BB%8B/" />
-            <id>https://example.com/posts/html%E7%AE%80%E4%BB%8B/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/html%E7%AE%80%E4%BB%8B/" />
+            <id>https://qimengz.github.io/posts/html%E7%AE%80%E4%BB%8B/</id>
             <updated>2020-06-01T19:53:07&#43;08:00</updated>
             <published>2019-03-16T20:13:36&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">什么是W3C 万维网联盟（World Wide Web Consortium，W3C），又称W3C理事……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">什么是W3C 万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。为半自治非政府组织（quasi-autonomous non-governmental organisation）。 历……
     
     </summary>
             
@@ -3792,16 +3774,15 @@ auto 自动，根据文字多少自动决定是否显示滚动条（默认样式
     
         <entry>
             <title type="text">关于HTTP的请求与相应</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/" />
-            <id>https://example.com/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/" />
+            <id>https://qimengz.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</id>
             <updated>2020-06-01T19:48:07&#43;08:00</updated>
             <published>2019-03-15T16:42:06&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">HTTP请求的格式 1 动词 路径 协议/版本 2 Key1: value1 2 Content-Type: application/x-www-form-urlencoded 2 Host: www.baidu.com 2 User-Agent: curl/7.54.0 3 4 要上传的数据 请求最……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">HTTP请求的格式 1 动词 路径 协议/版本 2 Key1: value1 2 Content-Type: application/x-www-form-urlencoded 2 Host: www.baidu.com 2 User-Agent: curl/7.54.0 3 4 要上传的数据 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空） 第三部分永远都是一个回车（\n） 当浏览器向Web服务器发出……
     
     </summary>
             
@@ -3882,16 +3863,15 @@ username=jinqiao&amp;amp;password=1234&lt;/p&gt;
     
         <entry>
             <title type="text">命令行相关</title>
-            <link rel="alternate" type="text/html" href="https://example.com/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/" />
-            <id>https://example.com/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</id>
+            <link rel="alternate" type="text/html" href="https://qimengz.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/" />
+            <id>https://qimengz.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</id>
             <updated>2020-06-01T19:49:09&#43;08:00</updated>
             <published>2019-03-14T12:46:03&#43;08:00</published>
             <author>
-                    <name>reuixiy</name>
-                    <uri>https://io-oi.me/</uri>
-                    <email>reuixiy@gmail.com</email>
+                    <name>Zxx</name>
+                    <uri>https://qimengz.github.io/</uri>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">ls 查看路径 cat 1.一次显示整个文件。 $ cat filename 2.从键盘创建一个文件。 $ cat &amp;gt; filename 只能创建新文……
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">ls 查看路径 cat 1.一次显示整个文件。 $ cat filename 2.从键盘创建一个文件。 $ cat &amp;gt; filename 只能创建新文件,不能编辑已有文件. 3.将几个文件合并为一个文件。 $cat file1 file2 &amp;gt; file mv mv命令是move的缩写，可以用来移动文件或者将文件……
     
     </summary>
             

@@ -7,34 +7,28 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo 主题 MemE</title>
-        <link>https://example.com/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <title>Zxx</title>
+        <link>https://qimengz.github.io/</link>
+        <description>Zxx快乐学习</description>
         <generator>Hugo 0.72.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
-        
-        
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 01 Jun 2020 20:21:54 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2020 19:49:58 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://qimengz.github.io/rss.xml" />
         
         
             <item>
                 <title>试着去理解虚拟DOM</title>
-                <link>https://example.com/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</guid>
+                <link>https://qimengz.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/</guid>
                 <pubDate>Tue, 20 Aug 2019 17:57:12 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -217,11 +211,9 @@ patchElement(root, vNode1，vNode2)
         
             <item>
                 <title>Cookie是什么</title>
-                <link>https://example.com/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</link>
-                <guid isPermaLink="true">https://example.com/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+                <link>https://qimengz.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
                 <pubDate>Fri, 05 Jul 2019 14:36:40 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -267,11 +259,9 @@ patchElement(root, vNode1，vNode2)
         
             <item>
                 <title>JS高级基础知识小结</title>
-                <link>https://example.com/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</guid>
+                <link>https://qimengz.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</guid>
                 <pubDate>Sat, 29 Jun 2019 15:31:03 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -433,11 +423,9 @@ var person = new Human(&#39;qq&#39;)
         
             <item>
                 <title>知识小汇总</title>
-                <link>https://example.com/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+                <link>https://qimengz.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
                 <pubDate>Thu, 06 Jun 2019 17:35:48 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -844,11 +832,9 @@ function unique(array) {
         
             <item>
                 <title>自己写一个简版jQuery</title>
-                <link>https://example.com/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</guid>
+                <link>https://qimengz.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</guid>
                 <pubDate>Wed, 24 Apr 2019 18:49:36 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -956,11 +942,9 @@ $div.setText(&#39;hi&#39;) // 可将所有 div 的 textContent 变为 hi
         
             <item>
                 <title>JS函数的五种声明方式</title>
-                <link>https://example.com/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</guid>
+                <link>https://qimengz.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</guid>
                 <pubDate>Wed, 17 Apr 2019 17:58:27 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -1019,11 +1003,9 @@ n(3)
         
             <item>
                 <title>JS数组API运用相关代码总结</title>
-                <link>https://example.com/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</guid>
+                <link>https://qimengz.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</guid>
                 <pubDate>Mon, 15 Apr 2019 19:13:22 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -1147,11 +1129,9 @@ a.join(&#39;-&#39;); // &#39;Wind-Rain-Fire&#39;
         
             <item>
                 <title>JS的数组与伪数组的区别</title>
-                <link>https://example.com/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+                <link>https://qimengz.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
                 <pubDate>Sat, 13 Apr 2019 17:28:10 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -1316,11 +1296,9 @@ var makeArray = function(obj) {
         
             <item>
                 <title>常见DOM以及API总结</title>
-                <link>https://example.com/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</guid>
+                <link>https://qimengz.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/</guid>
                 <pubDate>Fri, 12 Apr 2019 10:41:20 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -1889,11 +1867,9 @@ element.id = &amp;quot;test&amp;quot;;
         
             <item>
                 <title>原型与原型链</title>
-                <link>https://example.com/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+                <link>https://qimengz.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
                 <pubDate>Sat, 06 Apr 2019 19:12:56 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2190,11 +2166,9 @@ c.constructor.prototype === p // true
         
             <item>
                 <title>JS里的数据类型转换</title>
-                <link>https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+                <link>https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
                 <pubDate>Thu, 04 Apr 2019 19:52:50 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2310,11 +2284,9 @@ c.constructor.prototype === p // true
         
             <item>
                 <title>JS里的数据类型</title>
-                <link>https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
-                <guid isPermaLink="true">https://example.com/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+                <link>https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
                 <pubDate>Wed, 03 Apr 2019 18:42:20 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2438,11 +2410,9 @@ null返回object。
         
             <item>
                 <title>CSS布局</title>
-                <link>https://example.com/posts/css%E5%B8%83%E5%B1%80/</link>
-                <guid isPermaLink="true">https://example.com/posts/css%E5%B8%83%E5%B1%80/</guid>
+                <link>https://qimengz.github.io/posts/css%E5%B8%83%E5%B1%80/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/css%E5%B8%83%E5%B1%80/</guid>
                 <pubDate>Wed, 20 Mar 2019 20:53:01 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2737,11 +2707,9 @@ null返回object。
         
             <item>
                 <title>如何用CSS画一个太极</title>
-                <link>https://example.com/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</guid>
+                <link>https://qimengz.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</guid>
                 <pubDate>Tue, 19 Mar 2019 20:58:12 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -2842,11 +2810,9 @@ null返回object。
         
             <item>
                 <title>HTML常用标签</title>
-                <link>https://example.com/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
-                <guid isPermaLink="true">https://example.com/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+                <link>https://qimengz.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
                 <pubDate>Sun, 17 Mar 2019 15:59:25 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -3318,11 +3284,9 @@ auto 自动，根据文字多少自动决定是否显示滚动条（默认样式
         
             <item>
                 <title>HTML简介</title>
-                <link>https://example.com/posts/html%E7%AE%80%E4%BB%8B/</link>
-                <guid isPermaLink="true">https://example.com/posts/html%E7%AE%80%E4%BB%8B/</guid>
+                <link>https://qimengz.github.io/posts/html%E7%AE%80%E4%BB%8B/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/html%E7%AE%80%E4%BB%8B/</guid>
                 <pubDate>Sat, 16 Mar 2019 20:13:36 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -3724,11 +3688,9 @@ auto 自动，根据文字多少自动决定是否显示滚动条（默认样式
         
             <item>
                 <title>关于HTTP的请求与相应</title>
-                <link>https://example.com/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</guid>
+                <link>https://qimengz.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</guid>
                 <pubDate>Fri, 15 Mar 2019 16:42:06 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
@@ -3809,11 +3771,9 @@ username=jinqiao&amp;amp;password=1234&lt;/p&gt;
         
             <item>
                 <title>命令行相关</title>
-                <link>https://example.com/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</link>
-                <guid isPermaLink="true">https://example.com/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</guid>
+                <link>https://qimengz.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</link>
+                <guid isPermaLink="true">https://qimengz.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</guid>
                 <pubDate>Thu, 14 Mar 2019 12:46:03 &#43;0800</pubDate>
-                
-                    <author>reuixiy@gmail.com (reuixiy)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
