@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on 808Mak1r</title>
+    <link>https://808Mak1r.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on 808Mak1r</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Aug 2019 17:57:12 +0800</lastBuildDate><atom:link href="https://808Mak1r.github.io/categories/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>试着去理解虚拟DOM</title>
+      <link>https://808Mak1r.github.io/posts/test-post/</link>
+      <pubDate>Tue, 20 Aug 2019 17:57:12 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/test-post/</guid>
+      <description>去掉虚拟两个字，先了解下什么是DOM？  在原生JS中有DOM操作，就是使用浏览器提供的一些API，选中一个元素对它进行操作，比如说：增加一个属性、增加一个孩子、修改它里面的内容、改变它的位置，直接对DOM操作。这个DOM实际上对应的就是浏览器里面你所能看的见的对应的某个元素。
+ 那什么是虚拟DOM  假设我们要操作一个数据的报表，这个报表大概有几百条数据，我们要对这个报表进行一个排序的操作
+ 我们有这样一个表格，这里面大概有100多项
+   姓名 年纪 分数 等等     小红 12 44    小花 13 78       当我去点年纪的时候，希望年纪里的所有DOM元素可以按照年纪去排序，当我点新增的时候会在表格下面再新增一行数据，当我点击姓名的时候所有DOM按照姓名去做一个排序，我们可以想下用原生JS怎么去做排序，用JS去对DOM结构去排序，操作起来很难实现，也很麻烦。
+  后来我们有了MVVM框架可以对数据排序，数据对应到页面上的DOM结构，我们只需要对数据排序，那里面的DOM结构自然就排序了。
+  我们自己实现一个框架，假设数据变了，那我们的DOM结构也就变了，难道我们需要把数据重新渲染一次，如果用户频繁大量改动数据，DOM也会频繁改动，就会造成卡顿，那我们可以去做一些优化，怎么去做优化呢？
+  那我们可以像计算机内存那样，我们可以自己设定一个虚拟的数据结构，它是对真实的DOM结构是一一对应的，我们可以先对虚拟的数据结构进行操作，等全部操作完成了，再把它渲染成真实的DOM，那就变成了真实的数据。
+   那这样做有什么好处呢？   假设用户只做了微小的改动，比如增加了2条数据，那我们可以想打补丁一样，只把这两条加到真实的DOM里，而不用把整个DOM重新渲染。
+ 那这是虚拟DOM以及他的作用
+那虚拟DOM就是针对真实DOM做的一个一一映射的类似虚拟的数据结构，有了变化再把数据结构渲染到DOM里，做到局部的变化，实现行能优化。
+那我们怎么实现它呢  以下代码为将数据结构如何转化为虚拟DOM，然后将虚拟DOM渲染到页面中变成真正的DOM。   class VNode { constructor(tag, children, text) { this.tag = tag this.</description>
+    </item>
+    
+    <item>
+      <title>Cookie是什么</title>
+      <link>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Fri, 05 Jul 2019 14:36:40 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>维基百科定义 Cookie（复数形态Cookies），又称为“小甜饼”。类型为“小型文本文件”[1]，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。由网景公司的前雇员卢·蒙特利在1993年3月发明[2]。最初定义于RFC 2109。当前使用最广泛的 Cookie标准却不是RFC中定义的任何一个，而是在网景公司制定的标准上进行扩展后的产物。
+我的理解  Cookie就是用户登录网站，浏览器去访问服务器问这个人能不能登录，然后服务器传送给浏览器的一段数据。 浏览器会保留这段数据，不能随便删除（一般默认20分钟左右，浏览器不同具体时间不同） 然后这段时间内用户通过浏览器继续访问服务器，都必须带一个Cookie Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间 大小大概在 4kb 以内  Cookie的特点  服务器通过 Set-Cookie 响应头设置Cookie 浏览器得到Cookie之后，每次请求都要带上Cookie 服务器读取Cookie就知道登录用户的信息（用户名啥的）  如何使用 Cookie Cookie 一般有两个作用。
+第一个作用是识别用户身份 比如用户小红用浏览器访问了 http://qq.com，那么qq 的服务器就会立刻给小红返回一段数据就是Cookie。当 小红 再次访问qq的其他页面时，就会附带上这段数据。
+同理有个小白用浏览器访问了 http://qq.com，那么qq 的服务器就会立刻给小白返回一段数据就是Cookie。当 小白 再次访问qq的其他页面时，就会附带上这段数据。
+借此，http://qq.com 的服务器就能区分 小白和 小红 两个用户了。
+第二个作用是记录历史 http://taobao.com 是一个购物网站，当 小红 在上面将商品 白鞋 、酱油 加入购物车时，JS 可以改写 Cookie，在Cookie中添加两个商品的信息，表示购物车里有 白鞋 和 酱油 两样商品了。
+这样一来，当用户关闭网页，过三天再打开网页的时候，依然可以看到 白鞋、酱油 躺在购物车里，因为浏览器并不会无缘无故地删除这个 Cookie。
+借此，就达到里记录用户操作历史的目的了。</description>
+    </item>
+    
+    <item>
+      <title>JS高级基础知识小结</title>
+      <link>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sat, 29 Jun 2019 15:31:03 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</guid>
+      <description>原型与原型链 var object = {} object.__proto__ === Object.prototype // 为 true var fn = function(){} fn.__proto__ === Function.prototype // 为 true fn.__proto__.__proto__ === Object.prototype // 为 true var array = [] array.__proto__ === Array.prototype // 为 true array.__proto__.__proto__ === Object.prototype // 为 true Function.__proto__ === Function.prototype // 为 true Array.__proto__ === Function.prototype // 为 true Object.__proto__ === Function.prototype // 为 true true.__proto__ === Boolean.prototype // 为 true Function.prototype.__proto__ === Object.prototype // 为 true 面向对象new与this function fn(){ console.</description>
+    </item>
+    
+    <item>
+      <title>面试题小计</title>
+      <link>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Thu, 06 Jun 2019 17:35:48 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <description>请写出一个符合 W3C 规范的 HTML 文件 要求
+页面标题为「我的页面」
+页面中引入了一个外部 CSS 文件，文件路径为 /style.css
+页面中引入了另一个外部 CSS 文件，路径为
+/print.css，该文件仅在打印时生效
+页面中引入了另一个外部 CSS 文件，路径为
+/mobile.css，该文件仅在设备宽度小于 500 像素时生效
+页面中引入了一个外部 JS 文件，路径为 /main.js
+页面中引入了一个外部 JS 文件，路径为 /gbk.js，文件编码为 GBK
+页面中有一个 SVG 标签，SVG 里面有一个直径为 100 像素的圆圈，颜色随意 注意题目中的路径
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;我的页面&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/style.css&amp;quot;&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/print.css&amp;quot; media=&amp;quot;print&amp;quot;&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/mobile.css&amp;quot; media=&amp;quot;(max-width: 500px)&amp;quot;&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; *{ padding: 0; margin: 0; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;svg&amp;gt; &amp;lt;circle cx=&amp;quot;100&amp;quot; cy=&amp;quot;100&amp;quot; r=&amp;quot;50&amp;quot; fill=&amp;quot;black&amp;quot;&amp;gt; &amp;lt;/svg&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>自己写一个简版jQuery</title>
+      <link>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</link>
+      <pubDate>Wed, 24 Apr 2019 18:49:36 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</guid>
+      <description>为了便于学习与理解jQuery，自己尝试去写一个只有两个API的简版jQuery。
+什么是JQuery jQuery是js的一个工具库，由John Resig在2006年发布。
+j代表JavaScript，query是“查询”的意思。也就是说，这个库的意图是基于JavaScript的查询。
+查询的目标是什么？
+答案是DOM（文档对象模型）结构中的Node（节点）。一个网页就是一个html文档，而网页上的所有内容都是节点，包括文档节点、元素节点、文本节点、注释节点、属性节点等等。而jQuery的查询最主要针对的是元素节点，如段落（p）、锚点（a）、表格（table）等，只有少数方法可以处理文本节点与注释节点。同时jQuery还可以用attr方法方便地对元素节点的属性进行读取/设置。
+jQuery的核心是通过各种选择器，选中DOM元素
+节点或者选择器判断 由于jQuery支持传参字符串，所以先判断参数
+window.jQuery = function(nodeOrSelector) { let nodes = {} if (typeof nodeOrSelector === &#39;string&#39;) { let temp = document.querySelectorAll(nodeOrSelector) for (let i = 0; i &amp;lt; temp.length; i++) { nodes[i] = temp[i] } nodes.length = temp.length } else if (nodeOrSelector instanceof Node) { nodes = { 0: nodeOrSelector, length: 1 } } return nodes } addClass方法 jQuery的addClass方法，用于为DOM元素添加一个class。
+　$(&#39;body&#39;).addClass(&#39;hasJS&#39;); DOM元素本身有一个可读写的className属性，可以用来操作class。
+　document.</description>
+    </item>
+    
+    <item>
+      <title>JS函数的五种声明方式</title>
+      <link>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Wed, 17 Apr 2019 17:58:27 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</guid>
+      <description>具名函数 function f(x,y){return x +y } 关键字+函数名+参数+{} function 和var意思差不多，表示声明一个特殊的变量（对象）
+匿名函数 f = function(x,y){return x +y } 给变量赋值一个具名函数 f = function n(x,y){return x +y } 函数n的作用域只限函数内，和具名函数不同，体现了JS的不一致性，不建议使用。
+函数对象 window.Fuction函数对象 new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x + y &#39;) var n = 1 new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x&#39; +n+ &#39;return y &#39;) f(1,2) //4 //等同于 //new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x+n+ y&#39;) 箭头函数 箭头函数都是匿名函数
+f=(x,y) =&amp;gt; { return x + y} sum = (x,y) =&amp;gt; {return x + y} sum(1,2) //3 sum(2,4) //6 简化 return和{}必须同时省略</description>
+    </item>
+    
+    <item>
+      <title>JS的数组与伪数组的区别</title>
+      <link>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Sat, 13 Apr 2019 17:28:10 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>在JavaScript中，除了6种原始数据类型之外，其他所有的都是对象，包括函数（Function）。
+基本数据类型：String,boolean,Number,Undefined, Null,Symbol
+引用数据类型：Object(Array,Date,RegExp,Function)
+在这个前提下，咱们再来讨论JavaScript的对象。
+创建对象 var obj = {}; //种方式创建对象，被称之为对象直接量（Object Literal） var obj = new Object(); // 创建一个空对象，和{}一样 创建数组 var arr = [];//这是使用数组直接量（Array Literal）创建数组 var arr = new Array();//构造函数Array() 创建数组对象 对象与数组的关系 在说区别之前，需要先提到另外一个知识，就是JavaScript的原型继承。所有JavaScript的内置构造函数都是继承自 Object.prototype。在这个前提下，可以理解为使用 new Array() 或 [] 创建出来的数组对象，都会拥有 Object.prototype 的属性值。
+var obj = {};// 拥有Object.prototype的属性值 var arr = []; //使用数组直接量创建的数组，由于Array.prototype的属性继承自 Object.prototype， //那么，它将同时拥有Array.prototype和Object.prototype的属性值 可以得到对象和数组的第一个区别：对象没有数组Array.prototype的属性值
+什么是数组 数组具有一个最基本特征：索引，这是对象所没有的，下面来看一段代码：
+var obj = {}; var arr = []; obj[2] = &#39;a&#39;; arr[2] = &#39;a&#39;; console.</description>
+    </item>
+    
+    <item>
+      <title>常见DOM以及API总结</title>
+      <link>https://808Mak1r.github.io/posts/test-post/</link>
+      <pubDate>Fri, 12 Apr 2019 10:41:20 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/test-post/</guid>
+      <description>DOM DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
+浏览器会根据 DOM 模型，将结构化文档（比如 HTML 和 XML）解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。
+DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言。后面介绍的就是 JavaScript 对 DOM 标准的实现和用法。
+Node 接口 Node.prototype.nodeType nodeType属性返回一个整数值，表示节点的类型。
+document.nodeType // 9 上面代码中，文档节点的类型值为9。
+Node 对象定义了几个常量，对应这些类型值。
+document.nodeType === Node.DOCUMENT_NODE // true 上面代码中，文档节点的nodeType属性等于常量Node.DOCUMENT_NODE。
+不同节点的nodeType属性值和对应的常量如下。
+ 文档节点（document）：9，对应常量Node.DOCUMENT_NODE 元素节点（element）：1，对应常量Node.ELEMENT_NODE 属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE 文本节点（text）：3，对应常量Node.TEXT_NODE 文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE 文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE 注释节点（Comment）：8，对应常量Node.COMMENT_NODE 确定节点类型时，使用nodeType属性是常用方法。  var node = document.documentElement.firstChild; if (node.nodeType === Node.ELEMENT_NODE) { console.</description>
+    </item>
+    
+    <item>
+      <title>原型与原型链</title>
+      <link>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Sat, 06 Apr 2019 19:12:56 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>再讲原型与原型链的前提下先讲些概念方便理解
+ 对象是什么 面向对象编程（Object Oriented Programming，缩写为 OOP）是目前主流的编程范式。它将真实世界各种复杂的关系，抽象为一个个对象，然后由对象之间的分工与合作，完成对真实世界的模拟。
+每一个对象都是功能中心，具有明确分工，可以完成接受信息、处理数据、发出信息等任务。对象可以复用，通过继承机制还可以定制。因此，面向对象编程具有灵活、代码可复用、高度模块化等特点，容易维护和开发，比起由一系列函数或指令组成的传统的过程式编程（procedural programming），更适合多人合作的大型软件项目。
+那么，“对象”（object）到底是什么？我们从两个层次来理解。
+（1）对象是单个实物的抽象。
+一本书、一辆汽车、一个人都可以是对象，一个数据库、一张网页、一个与远程服务器的连接也可以是对象。当实物被抽象成对象，实物之间的关系就变成了对象之间的关系，从而就可以模拟现实情况，针对对象进行编程。
+（2）对象是一个容器，封装了属性（property）和方法（method）。
+属性是对象的状态，方法是对象的行为（完成某种任务）。比如，我们可以把动物抽象为animal对象，使用“属性”记录具体是那一种动物，使用“方法”表示动物的某种行为（奔跑、捕猎、休息等等）。
+构造函数 面向对象编程的第一步，就是要生成对象。前面说过，对象是单个实物的抽象。通常需要一个模板，表示某一类实物的共同特征，然后对象根据这个模板生成。
+典型的面向对象编程语言（比如 C++ 和 Java），都有“类”（class）这个概念。所谓“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
+JavaScript 语言使用构造函数（constructor）作为对象的模板。所谓”构造函数”，就是专门用来生成实例对象的函数。它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。
+构造函数就是一个普通的函数，但是有自己的特征和用法。
+var Vehicle = function () { this.price = 1000; }; 上面代码中，Vehicle就是构造函数。为了与普通函数区别，构造函数名字的第一个字母通常大写。
+构造函数的特点有两个。
+函数体内部使用了this关键字，代表了所要生成的对象实例。 生成对象的时候，必须使用new命令。 下面先介绍new命令。
+new 命令 基本用法 new命令的作用，就是执行构造函数，返回一个实例对象。
+var Vehicle = function () { this.price = 1000; }; var v = new Vehicle(); v.price // 1000 上面代码通过new命令，让构造函数Vehicle生成一个实例对象，保存在变量v中。这个新生成的实例对象，从构造函数Vehicle得到了price属性。new命令执行时，构造函数内部的this，就代表了新生成的实例对象，this.price表示实例对象有一个price属性，值是1000。
+使用new命令时，根据需要，构造函数也可以接受参数。
+var Vehicle = function (p) { this.price = p; }; var v = new Vehicle(500); new命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。下面两行代码是等价的，但是为了表示这里是函数调用，推荐使用括号。</description>
+    </item>
+    
+    <item>
+      <title>JS数组API运用相关代码总结</title>
+      <link>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 05 Apr 2019 19:13:22 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</guid>
+      <description>自己总结代码题 1.使得 students 按分数的高低从大到小排列
+var students = [&#39;小明&#39;,&#39;小红&#39;,&#39;小花&#39;] var scores = { 小明: 59, 小红: 99, 小花: 80 } students.sort(???) 请填写 ??? 使得 students 按分数的高低从大到小排列
+function ( x , y ) { return scores[y]-scores[x] }   var a = [1,2,3,4,5,6,7,8,9] a.filter(???).map(???) // [4,16,36,64]  获取所有偶数 得到所有偶数的平方  a.filter( function ( value , key ) { return value % 2 === 0 }).map ( function ( value ) { return value * value })   var a = [1,2,3,4,5,6,7,8,9] a.</description>
+    </item>
+    
+    <item>
+      <title>JS里的数据类型转换</title>
+      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Thu, 04 Apr 2019 19:52:50 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>类型转换 本文分别讲下数据类型之间的相互转换
+转换为string    数据类型.toString    数据类型 string     number toString   boolean toString   symbol 不研究   null 报错   undefined 报错   object toString   2.     数据类型 + &#39;&#39; &#39;&#39; + 数据类型 3.
+window.String(/*数据类型*/) 转换为boolean    Boolean(/*数据类型*/)   因为!表示取反 !!表示负负得正
+!!/*数据类型*/ 5个falsy值  数字里只有0 NaN false string中只有空字符串&#39;&amp;lsquo;是false null 和undefined 只有一个值，就是false obiect 都是true,object包括数组和函数所以他们俩也是true falsy参考链接  转换为number &#39;1&#39;--&amp;gt;1    Number(&#39;1&#39;)===1   parseInt(&#39;1&#39;,10)===1//10表示十进制 3.</description>
+    </item>
+    
+    <item>
+      <title>JS里的数据类型</title>
+      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 03 Apr 2019 18:42:20 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>JS里的7种数据类型 JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 新增的第七种 Symbol 类型的值，不描述。）
+ 数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 null：表示空值，即此处的值为空。 对象（object）：各种值组成的集合。 Symbol（符号）：https://developer.mozilla.org/zh-CN/docs/Glossary/Symbol  string 表示可以用
+&#39; &#39;//空字符串 &amp;quot; &amp;quot;//空字符串 转义符号为\
+var a = &amp;quot;&#39;&amp;quot;//单引号 var a = &#39;&amp;quot;&#39;//双引号 var a = &#39;\&#39;&#39;//单引号 var n = &#39;\n&#39;//回车 var t = &#39;\t&#39;//Tab(制表符) var b = &#39;\\&#39;//表示\符号 多行字符串表示
+//不是字符串里有回车 var s = &#39;12345\ 67890&#39;//坑人语法不使用 var s2 = &#39;12345&#39; &#39;67890&#39; //易报错5之后有看不见的空格 以上两种不建议使用
+var s3 = &#39;12345&#39;+ &#39;67890&#39; ==建议使用这个语法==
+在ES6中有个新的语法特性为:
+var s4 = &#39;12345 //此处5后面有个回车 67890&#39;//实际为11个字符包含一个回车 关于null和undefined</description>
+    </item>
+    
+    <item>
+      <title>CSS布局</title>
+      <link>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Wed, 20 Mar 2019 20:53:01 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/</guid>
+      <description>CSS布局 float 布局 float 布局应该是目前各大网站用的最多的一种布局方式了，但是也特别复杂，这里详细讲一下
+首先，什么是浮动？
+浮动元素是脱离文档流的，但不脱离文本流，这是什么意思呢，用过 word 的应该知道有一种图片环绕的方式是文字环绕吧，就是这种效果。
+那么它有什么特点呢
+ 对自身的影响  float 元素可以形成块，如 span元素。可以让行内元素也拥有宽和高，因为块级元素具有宽高 浮动元素的位置尽量靠上 尽量靠左（float:left）或右（float:right），如果那一行满足不了浮动元素的宽度要求，则元素会往下掉   对兄弟元素的影响  不影响其他块级元素的位置 影响其他块级元素的文本 上面贴非 float 元素 旁边贴 float 元素或者边框   对父级元素的影响  从布局上 “消失” 高度塌陷    如果有以下html结构，设置左右两栏布局
+&amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;leftChild&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;rightChild&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  设置浮动：左右布局常用的方法就是为子元素设置浮动，然后在其父元素上使用clearfix类清除浮动。示例代码如下：  .clearfix::after{ content:&amp;quot;&amp;quot;; display:block; clear:both; } .leftChild, .rightChild{ float:left; } -设置position绝对定位，为父元素设置position:relative; 为子元素设置position:absolute 。示例代码如下：
+.parent{ position:relative; } .leftChild{ position:absolute; left:0; top:0; } .</description>
+    </item>
+    
+    <item>
+      <title>如何用CSS画一个太极</title>
+      <link>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</link>
+      <pubDate>Tue, 19 Mar 2019 20:58:12 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</guid>
+      <description>本文将介绍如何用CSS画一个太极图
+首先 画一个方块黑白各一半
+body { background-color: lightslategray; } .yy { width: 0px; height: 600px; border-left: 300px solid black; border-right: 300px solid white; } 如图 再画白色部分的园（先画方块）
+.yy::before { content: &#39;&#39;; display: block; width: 100px; height: 100px; border: 100px solid black ; border-image-repeat: } 如图 再设置它的半径为100%
+ border-image-repeat: 图3 再让圆居中对齐
+ background-color: white; margin-left: -150px; 图4
+接下来在白色下面画一个宽高100px的方块，在上面加一个100px白色的外框，和上面一样让它的半径100%再加上黑色的背景色，一个小黑球就完成了
+.yy::after { content: &#39;&#39;; display: block; width: 100px; height: 100px; border: 100px solid white; border-radius: 100%; background-color: black; } 图5</description>
+    </item>
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Sun, 17 Mar 2019 15:59:25 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>1.HTML5头部结构 【DOCTYPE html】 声明文档类型为HTML5文件。 文档声明在HTML5文档必不可少，且必须放在文档的第一行。
+【meta标签】 1-charset属性：单独使用，设置文档字符及编码格式。 写法：
+&amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; 常见的中文编码格式： B-2312:国标码，简体中文 GBK：扩展的国标编码，简体中文 UTF-8:万国码 Unicode码，基本兼容各国语言 2-http-equiv属性：需配合content属性使用。主要声明浏览器如何解释编译文件。 写法：```html
+【link标签】 1-作用：用于为网页链接各种文件。 2-常用属性： rel：用于表明被链接文件与当前文件关系。icon表明被链接图片是当前网页的icon图标。 type：表明被链接文件是什么类型，可省略。 href：表明链接文件的地址。
+&amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;img/icon.png&amp;#34; /&amp;gt; 【title标签】 网页的标题，即网页选项卡上的文字。
+&amp;lt;title&amp;gt;111&amp;lt;/title&amp;gt; 2.常见的块级标签
+【常见的块级标签】
+标题标签&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;...&amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt; 水平线&amp;lt;hr/&amp;gt; 段落&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt; 换行&amp;lt;br/&amp;gt; 引用&amp;lt;blockquote&amp;lt;/blockquote&amp;gt; 预格式&amp;lt;pre&amp;gt;&amp;lt;/pre&amp;gt; 引用标签```&amp;lt;blockquote&amp;gt;&amp;lt;/blockquote&amp;gt; 表明标签中的文字，为引用的内容，浏览器显示为等宽字体，并缩进。 cite属性，表明引用的来源，一般为引用的网址URL &amp;lt;blockquote cite=&amp;#34;http：//www.yt4561761.com&amp;#34;&amp;gt;dfdsfsdfd&amp;lt;/blockquote&amp;gt; 预格式标签&amp;lt;pre&amp;gt;&amp;lt;/pre&amp;gt; 浏览器解析时，会按照等宽字体显示，并保留标签内的空格和回车。 常用于保留代码格式。 &amp;lt;pre&amp;gt;yt4561761yt4561761yt4561761&amp;lt;/pre&amp;gt; 【有序列表ol order list】
+&amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;一&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;二&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;三&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;四&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; 【无序列表ul unorder list】
+&amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;4&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 【定义描述列表】
+&amp;lt;dl&amp;gt; &amp;lt;dt&amp;gt;标题&amp;lt;/dt&amp;gt; &amp;lt;dd&amp;gt;描述项&amp;lt;/dd&amp;gt; &amp;lt;/dl&amp;gt; 一般情况下，标题dt只有一项。描述项dd可以有多项。 浏览器显示时，标题顶格显示，dd缩进显示。</description>
+    </item>
+    
+    <item>
+      <title>HTML简介</title>
+      <link>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 16 Mar 2019 20:13:36 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/</guid>
+      <description>什么是W3C 万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。为半自治非政府组织（quasi-autonomous non-governmental organisation）。
+历史 万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS），DARPA曾率先推出了互联网及其前身ARPANET。
+该组织试图透过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。
+CERN最初打算做为W3C的欧洲分支机构，然而CERN希望把重点放在粒子物理而不是信息技术上。1995年4月，法国国家信息与自动化研究所（INRIA）成为W3C的欧洲机构。1996年9月，庆应义塾大学SFC研究所成为W3C亚洲机构。从1997年开始，W3C在世界各地创建了区域办事处。截至2009年9月，已有十八个区域办事处，涵盖澳大利亚、比荷卢联盟、巴西、中国、芬兰、德国、奥地利、希腊、香港、匈牙利、印度、以色列、意大利、韩国、摩洛哥、南非、西班牙、瑞典。2013年1月，北京航空航天大学成为W3C中国机构。2016年，W3C在英国和爱尔兰创建了区域办事处。
+标准 为解决网络应用中不同平台、技术和开发者带来的不兼容问题，保障网络信息的顺利和完整流通，万维网联盟制定了一系列标准并督促网络应用开发者和内容提供者遵循这些标准。标准的内容包括使用语言的规范，开发中使用的导则和解释引擎的行为等等。W3C也制定了包括XML和CSS等的众多影响深远的标准规范。
+但是，W3C制定的网络标准似乎并非强制，而只是推荐标准。因此部分网站仍然不能完全实现这些标准，特别是使用早期所见即所得网页编辑软件设计的网页往往会包含大量非标准代码。
+什么是MDN MDN Web Docs（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。
+MDN历史 该项目始于2005年，最初由Mozilla公司员工Deb Richardson领导。自2006年以来，文档工作由Eric Shepherd领导。
+网站最初的内容是由DevEdge提供，但在AOL收购Netscape后，DevEdge网站也宣布关闭。为此Mozilla基金会向AOL获取了DevEdge发布的内容，同时将DevEdge内容搬移到mozilla.org。
+MDN本身有一个论坛，并在Mozilla IRC网络上有一个IRC频道#mdn。MDN由Mozilla公司提供服务器和员工的资助。
+2016年10月3日发表的Brave网页浏览器将MDN作为其搜索引擎选项之一。
+HTML标签列表 根元素节 &amp;lt;html&amp;gt;	代表 HTML 或 XHTML 文档的根。其他所有元素必须是这个元素的子节点。 文档元数据节 &amp;lt;head&amp;gt;	代表关于文档元数据的一个集合，包括脚本或样式表的链接或内容。 &amp;lt;title&amp;gt;	定义文档的标题，将显示在浏览器的标题栏或标签页上。该元素只能包含文本，包含的标签不会被解释。 &amp;lt;base&amp;gt;	定义页面上相对 URL 的基准 URL。 &amp;lt;link&amp;gt;	用于链接外部的 CSS 到该文档。 &amp;lt;meta&amp;gt;	定义其他 HTML 元素无法描述的元数据。 &amp;lt;style&amp;gt;用于内联 CSS。 脚本节 &amp;lt;script&amp;gt;定义一个内联脚本或链接到外部脚本。脚本语言是 JavaScript。 &amp;lt;noscript&amp;gt; 定义当浏览器不支持脚本时显示的替代文字。 &amp;lt;template&amp;gt; 这个元素在 HTML5 中加入通过 JavaScript 在运行时实例化内容的容器。 章节节 &amp;lt;body&amp;gt;	代表 HTML文档的内容。在文档中只能有一个 &amp;lt;body&amp;gt; 元素。 &amp;lt;section&amp;gt; 这个元素在 HTML5 中加入定义文档中的一个章节。 &amp;lt;nav&amp;gt; 这个元素在 HTML5 中加入定义只包含导航链接的章节。 &amp;lt;article&amp;gt; 这个元素在 HTML5 中加入定义可以独立于内容其余部分的完整独立内容块。 &amp;lt;aside&amp;gt; 这个元素在 HTML5 中加入	定义和页面内容关联度较低的内容——如果被删除，剩下的内容仍然很合理。 &amp;lt;h1&amp;gt;,&amp;lt;h2&amp;gt;,&amp;lt;h3&amp;gt;,&amp;lt;h4&amp;gt;,&amp;lt;h5&amp;gt;,&amp;lt;h6&amp;gt;	标题元素实现了六层文档标题，&amp;lt;h1&amp;gt; 是最大的标题，&amp;lt;h6&amp;gt; 是最小的标题。标题元素简要地描述章节的主题。 &amp;lt;header&amp;gt; 这个元素在 HTML5 中加入	定义页面或章节的头部。它经常包含 logo、页面标题和导航性的目录。 &amp;lt;footer&amp;gt; 这个元素在 HTML5 中加入	定义页面或章节的尾部。它经常包含版权信息、法律信息链接和反馈建议用的地址。 &amp;lt;address&amp;gt;	定义包含联系信息的一个章节。 &amp;lt;main&amp;gt;这个元素在 HTML5 中加入	定义文档中主要或重要的内容。 组织内容节 &amp;lt;p&amp;gt;	定义一个段落。 &amp;lt;hr&amp;gt;	代表章节、文章或其他长内容中段落之间的分隔符。 &amp;lt;pre&amp;gt;	代表其内容已经预先排版过，格式应当保留 。 &amp;lt;blockquote&amp;gt;	代表引用自其他来源的内容。 &amp;lt;ol&amp;gt;	定义一个有序列表。 &amp;lt;ul&amp;gt;	定义一个无序列表。 &amp;lt;li&amp;gt;	定义列表中的一个列表项。 &amp;lt;dl&amp;gt;	定义一个定义列表（一系列术语和其定义）。 &amp;lt;dt&amp;gt;	代表一个由下一个 &amp;lt;dd&amp;gt; 定义的术语。 &amp;lt;dd&amp;gt;	代表出现在它之前术语的定义。 &amp;lt;figure&amp;gt; 这个元素在 HTML5 中加入	代表一个和文档有关的图例。 &amp;lt;figcaption&amp;gt; 这个元素在 HTML5 中加入	代表一个图例的说明。 &amp;lt;div&amp;gt;	代表一个通用的容器，没有特殊含义。 文字形式节 &amp;lt;a&amp;gt;	代表一个链接到其他资源的超链接 。 &amp;lt;em&amp;gt;	代表强调 文字。 &amp;lt;strong&amp;gt;	代表特别重要 文字。 &amp;lt;small&amp;gt;	代表注释 ，如免责声明、版权声明等，对理解文档不重要。 &amp;lt;s&amp;gt;	代表不准确或不相关 的内容。 &amp;lt;cite&amp;gt;	代表作品标题 。 &amp;lt;q&amp;gt;	代表内联的引用 。 &amp;lt;dfn&amp;gt;	代表一个术语包含在其最近祖先内容中的定义 。 &amp;lt;abbr&amp;gt;	代表省略 或缩写 ，其完整内容在 title 属性中。 &amp;lt;data&amp;gt; 这个元素在 HTML5 中加入	关联一个内容的机器可读的等价形式 （该元素只在 WHATWG 版本的 HTML 标准中，不在 W3C 版本的 HTML5 标准中）。 &amp;lt;time&amp;gt; 这个元素在 HTML5 中加入	代表日期 和时间 值；机器可读的等价形式通过 datetime 属性指定。 &amp;lt;code&amp;gt;	代表计算机代码 。 &amp;lt;var&amp;gt;	代表代码中的变量 。 &amp;lt;samp&amp;gt;	代表程序或电脑的输出 。 &amp;lt;kbd&amp;gt;	代表用户输入 ，一般从键盘输出，但也可以代表其他输入，如语音输入。 &amp;lt;sub&amp;gt;,&amp;lt;sup&amp;gt;	分别代表下标 和上标 。 &amp;lt;i&amp;gt;	代表一段不同性质 的文字，如技术术语、外文短语等。 &amp;lt;b&amp;gt;	代表一段需要被关注 的文字。 &amp;lt;u&amp;gt;	代表一段需要下划线呈现的文本注释，如标记出拼写错误的文字等。 &amp;lt;mark&amp;gt; 这个元素在 HTML5 中加入	代表一段需要被高亮的引用 文字。 &amp;lt;ruby&amp;gt; 这个元素在 HTML5 中加入	代表被ruby 注释 标记的文本，如中文汉字和它的拼音。 &amp;lt;rt&amp;gt; 这个元素在 HTML5 中加入	代表ruby 注释 ，如中文拼音。 &amp;lt;rp&amp;gt; 这个元素在 HTML5 中加入	代表 ruby 注释两边的额外插入文本 ，用于在不支持 ruby 注释显示的浏览器中提供友好的注释显示。 &amp;lt;bdi&amp;gt; 这个元素在 HTML5 中加入	代表需要脱离 父元素文本方向的一段文本。它允许嵌入一段不同或未知文本方向格式的文本。 &amp;lt;bdo&amp;gt;	指定子元素的文本方向 ，显式地覆盖默认的文本方向。 &amp;lt;span&amp;gt;	代表一段没有特殊含义的文本，当其他语义元素都不适合文本时候可以使用该元素。 &amp;lt;br&amp;gt;	代表换行 。 &amp;lt;wbr&amp;gt; 这个元素在 HTML5 中加入	代表建议换行 (Word Break Opportunity) ，当文本太长需要换行时将会在此处添加换行符。 编辑节 &amp;lt;ins&amp;gt;	定义增加 到文档的内容。 &amp;lt;del&amp;gt;	定义从文档移除 的内容。 嵌入内容节 &amp;lt;img&amp;gt;	代表一张图片 。 &amp;lt;iframe&amp;gt;	代表一个内联的框架 。 &amp;lt;embed&amp;gt; 这个元素在 HTML5 中加入	代表一个嵌入 的外部资源，如应用程序或交互内容。 &amp;lt;object&amp;gt;	代表一个外部资源 ，如图片、HTML 子文档、插件等。 &amp;lt;param&amp;gt;	代表 &amp;lt;object&amp;gt; 元素所指定的插件的参数 。 &amp;lt;video&amp;gt; 这个元素在 HTML5 中加入	代表一段视频 及其视频文件和字幕，并提供了播放视频的用户界面。 &amp;lt;audio&amp;gt; 这个元素在 HTML5 中加入	代表一段声音 ，或音频流 。 &amp;lt;source&amp;gt; 这个元素在 HTML5 中加入	为 &amp;lt;video&amp;gt; 或 &amp;lt;audio&amp;gt; 这类媒体元素指定媒体源 。 &amp;lt;track&amp;gt; 这个元素在 HTML5 中加入	为 &amp;lt;video&amp;gt; 或 &amp;lt;audio&amp;gt; 这类媒体元素指定文本轨道（字幕） 。 &amp;lt;canvas&amp;gt; 这个元素在 HTML5 中加入	代表位图区域 ，可以通过脚本在它上面实时呈现图形，如图表、游戏绘图等。 &amp;lt;map&amp;gt;	与 &amp;lt;area&amp;gt; 元素共同定义图像映射 区域。 &amp;lt;area&amp;gt;	与 &amp;lt;map&amp;gt; 元素共同定义图像映射 区域。 &amp;lt;svg&amp;gt; 这个元素在 HTML5 中加入	定义一个嵌入式矢量图 。 &amp;lt;math&amp;gt; 这个元素在 HTML5 中加入	定义一段数学公式 。 表格节 &amp;lt;table&amp;gt;	定义多维数据 。 &amp;lt;caption&amp;gt;	代表表格的标题 。 &amp;lt;colgroup&amp;gt;	代表表格中一组单列或多列 。 &amp;lt;col&amp;gt;	代表表格中的列 。 &amp;lt;tbody&amp;gt;	代表表格中一块具体数据 （表格主体）。 &amp;lt;thead&amp;gt;	代表表格中一块列标签 （表头）。 &amp;lt;tfoot&amp;gt;	代表表格中一块列摘要 （表尾）。 &amp;lt;tr&amp;gt;	代表表格中的行 。 &amp;lt;td&amp;gt;	代表表格中的单元格 。 &amp;lt;th&amp;gt;	代表表格中的头部单元格 。 表单节 &amp;lt;form&amp;gt;	代表一个表单 ，由控件组成。 &amp;lt;fieldset&amp;gt;	代表控件组 。 &amp;lt;legend&amp;gt;	代表 &amp;lt;fieldset&amp;gt; 控件组的标题 。 &amp;lt;label&amp;gt;	代表表单控件的标题 。 &amp;lt;input&amp;gt;	代表允许用户编辑数据的数据区 （文本框、单选框、复选框等）。 &amp;lt;button&amp;gt;	代表按钮 。 &amp;lt;select&amp;gt;	代表下拉框 。 &amp;lt;datalist&amp;gt; 这个元素在 HTML5 中加入	代表提供给其他控件的一组预定义选项 。 &amp;lt;optgroup&amp;gt;	代表一个选项分组 。 &amp;lt;option&amp;gt;	代表一个 &amp;lt;select&amp;gt; 元素或 &amp;lt;datalist&amp;gt; 元素中的一个选项 &amp;lt;textarea&amp;gt;	代表多行文本框 。 &amp;lt;keygen&amp;gt; 这个元素在 HTML5 中加入	代表一个密钥对生成器 控件。 &amp;lt;output&amp;gt; 这个元素在 HTML5 中加入	代表计算值 。 &amp;lt;progress&amp;gt; 这个元素在 HTML5 中加入	代表进度条 。 &amp;lt;meter&amp;gt; 这个元素在 HTML5 中加入	代表滑动条 。 交互元素节 &amp;lt;details&amp;gt; 这个元素在 HTML5 中加入	代表一个用户可以(点击)获取额外信息或控件的小部件 。 &amp;lt;summary&amp;gt; 这个元素在 HTML5 中加入	代表 &amp;lt;details&amp;gt; 元素的综述 或标题 。 &amp;lt;menuitem&amp;gt; 这个元素在 HTML5 中加入	代表一个用户可以点击的菜单项。 &amp;lt;menu&amp;gt; 这个元素在 HTML5 中加入	代表菜单。 什么是空标签 没有闭合标签的标签被称作为空标签。 在我们使用的标签中，有的具有闭合标签。例如&amp;lt;td&amp;gt;标签，它有闭合标签&amp;lt;/td&amp;gt;。但是也有一部分标签没有闭合标签，例如&amp;lt;br /&amp;gt;标签，这一类标签我们称之为空标签。</description>
+    </item>
+    
+    <item>
+      <title>关于HTTP的请求与相应</title>
+      <link>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</link>
+      <pubDate>Fri, 15 Mar 2019 16:42:06 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</guid>
+      <description>HTTP请求的格式 1 动词 路径 协议/版本 2 Key1: value1 2 Content-Type: application/x-www-form-urlencoded 2 Host: www.baidu.com 2 User-Agent: curl/7.54.0 3 4 要上传的数据 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空） 第三部分永远都是一个回车（\n）
+当浏览器向Web服务器发出请求时，它向服务器传递了一个数据块，也就是请求信息，HTTP请求信息由3部分组成：（1）请求方法URI协议/版本（2）　请求头(Request Header)（3）　请求正文 （1）请求方法URI协议/版本 请求的第一行是“方法URI协议/版本”例如：GET/sample.jsp HTTP/1.1 以上代码中“GET”代表请求方法，“/sample.jsp”表示URI，“HTTP/1.1代表协议和协议的版本。 （2）请求头(Request Header) 请求头包含许多有关的客户端环境和请求正文的有用信息。例如，请求头可以声明浏览器所用的语言，请求正文的长度等。例如： Accept:image/gif.image/jpeg./ Accept-Language:zh-cn Connection:Keep-Alive Host:localhost User-Agent:Mozila/4.0(compatible:MSIE5.01:Windows NT5.0) Accept-Encoding:gzip,deflate. （3）请求正文 请求头和请求正文之间是一个空行，这个行非常重要，它表示请求头已经结束，接下来的是请求正文。请求正文中可以包含客户提交的查询字符串信息： username=jinqiao&amp;amp;password=1234
+用Chrome查看请求 1.打开检查，进入Network 2.在地址栏输入网址 3.在 Network 点击，查看 request，点击「view source」 4.如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到
+HTTP响应 请求了之后，应该都能得到一个响应，除非断网了，或者服务器宕机了。
+1.GET 请求和 POST 请求对应的响应可以一样，也可以不一样 2.响应的第四部分可以很长很长很长
+响应的格式 1 协议/版本号 状态码 状态解释 2 Key1: value1 2 Key2: value2 2 Content-Length: 17931 2 Content-Type: text/html 3 4 要下载的内容</description>
+    </item>
+    
+    <item>
+      <title>命令行相关</title>
+      <link>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Thu, 14 Mar 2019 12:46:03 +0800</pubDate>
+      
+      <guid>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</guid>
+      <description>ls 查看路径
+cat 1.一次显示整个文件。 $ cat filename 2.从键盘创建一个文件。 $ cat &amp;gt; filename 只能创建新文件,不能编辑已有文件. 3.将几个文件合并为一个文件。 $cat file1 file2 &amp;gt; file
+mv mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录
+touch 1.是用于把已存在文件的时间标签更新为系统当前的时间（默认方式），它们的数据将原封不动地保留下来； 2.是用来创建新的空文件
+explainshell.com 这个网站是用来查找自己不懂得命令行的相关释义 </description>
+    </item>
+    
+  </channel>
+</rss>
