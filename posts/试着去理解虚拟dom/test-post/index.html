@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='试着去理解虚拟DOM'><title>试着去理解虚拟DOM</title>
+
+<link rel='canonical' href='https://808Mak1r.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/test-post/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='试着去理解虚拟DOM'>
+<meta property='og:description' content='试着去理解虚拟DOM'>
+<meta property='og:url' content='https://808Mak1r.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/test-post/'>
+<meta property='og:site_name' content='808Mak1r'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='前端' /><meta property='article:published_time' content='2019-08-20T17:57:12&#43;08:00'/><meta property='article:modified_time' content='2019-08-20T17:57:12&#43;08:00'/>
+<meta name="twitter:title" content="试着去理解虚拟DOM">
+<meta name="twitter:description" content="试着去理解虚拟DOM">
+    </head>
+    <body class="article-page keep-sidebar">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu639e11651d22d4499f5a1ba9543dc353_27179_300x0_resize_box_2.png" width="300"
+                            height="301" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://808Mak1r.github.io">808Mak1r</a></h1>
+        <h2 class="site-description">kekeke~~~</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/test-post/">试着去理解虚拟DOM</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        试着去理解虚拟DOM
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Aug 20, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="去掉虚拟两个字先了解下什么是dom">去掉虚拟两个字，先了解下什么是DOM？</h2>
+<blockquote>
+<p>在原生JS中有DOM操作，就是使用浏览器提供的一些API，选中一个元素对它进行操作，比如说：增加一个属性、增加一个孩子、修改它里面的内容、改变它的位置，直接对DOM操作。这个DOM实际上对应的就是浏览器里面你所能看的见的对应的某个元素。</p>
+</blockquote>
+<h2 id="那什么是虚拟dom">那什么是虚拟DOM</h2>
+<blockquote>
+<p>假设我们要操作一个数据的报表，这个报表大概有几百条数据，我们要对这个报表进行一个排序的操作</p>
+</blockquote>
+<p>我们有这样一个表格，这里面大概有100多项</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>年纪</th>
+<th>分数</th>
+<th>等等</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小红</td>
+<td>12</td>
+<td>44</td>
+<td></td>
+</tr>
+<tr>
+<td>小花</td>
+<td>13</td>
+<td>78</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>当我去点年纪的时候，希望年纪里的所有DOM元素可以按照年纪去排序，当我点新增的时候会在表格下面再新增一行数据，当我点击姓名的时候所有DOM按照姓名去做一个排序，我们可以想下用原生JS怎么去做排序，用JS去对DOM结构去排序，操作起来很难实现，也很麻烦。</p>
+</li>
+<li>
+<p>后来我们有了MVVM框架可以对数据排序，数据对应到页面上的DOM结构，我们只需要对数据排序，那里面的DOM结构自然就排序了。</p>
+</li>
+<li>
+<p>我们自己实现一个框架，假设数据变了，那我们的DOM结构也就变了，难道我们需要把数据重新渲染一次，如果用户频繁大量改动数据，DOM也会频繁改动，就会造成卡顿，那我们可以去做一些优化，怎么去做优化呢？</p>
+</li>
+<li>
+<p>那我们可以像计算机内存那样，我们可以自己设定一个虚拟的数据结构，它是对真实的DOM结构是一一对应的，我们可以先对虚拟的数据结构进行操作，等全部操作完成了，再把它渲染成真实的DOM，那就变成了真实的数据。</p>
+</li>
+</ol>
+<ul>
+<li><strong>那这样做有什么好处呢？</strong></li>
+</ul>
+<blockquote>
+<p>假设用户只做了微小的改动，比如增加了2条数据，那我们可以想打补丁一样，只把这两条加到真实的DOM里，而不用把整个DOM重新渲染。</p>
+</blockquote>
+<p>那这是虚拟DOM以及他的作用</p>
+<p><strong>那虚拟DOM就是针对真实DOM做的一个一一映射的类似虚拟的数据结构，有了变化再把数据结构渲染到DOM里，做到局部的变化，实现行能优化。</strong></p>
+<h2 id="那我们怎么实现它呢">那我们怎么实现它呢</h2>
+<ul>
+<li>以下代码为将数据结构如何转化为虚拟DOM，然后将虚拟DOM渲染到页面中变成真正的DOM。</li>
+</ul>
+<pre><code>
+class VNode {
+  constructor(tag, children, text) {
+    this.tag = tag
+    this.text = text
+    this.children = children
+  }
+
+  render() {
+    if(this.tag === '#text') {
+      return document.createTextNode(this.text)
+    }
+    let el = document.createElement(this.tag)
+    this.children.forEach(vChild =&gt; {
+      el.appendChild(vChild.render())
+    })
+    return el
+  }
+}
+
+function v(tag, children, text) {
+  if(typeof children === 'string') {
+    text = children
+    children = []
+  }
+  return new VNode(tag, children, text)
+}
+
+
+/*
+//虚拟的JSON格式的数据结构
+let nodesData = {
+  tag: 'div',
+  children: [
+    {
+      tag: 'p',
+      children: [
+        {
+          tag: 'span',
+          children: [
+            {
+              tag: '#text',
+              text: 'hi'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      tag: 'span',
+        children: [
+          {
+            tag: '#text',
+            text: 'oo'
+          }
+        ]
+    }
+  ]
+}
+
+ */
+
+
+let vNodes = v('div', [
+      v('p', [
+        v('span', [ v('#text', 'hi') ] )
+        ]
+      ),
+      v('span', [
+        v('#text',  'oo')
+        ])
+    ]
+  )
+console.log(vNodes.render())
+
+
+</code></pre><h2 id="什么是diff">什么是diff</h2>
+<p>我们需要做一些改变的时候，比如增删改查，那么我们需要将改变后的虚拟DOM树与真实的DOM树做对比，找出差异，然后做到局部更新改变的地方，那么找出差异就是diff（算法找两棵DOM树的差异）。</p>
+<hr>
+<p>以下代码为简单的实现 DOM diff</p>
+<pre><code>function patchElement(parent, newVNode, oldVNode, index = 0) {
+  if(!oldVNode) {
+    parent.appendChild(newVNode.render())
+  } else if(!newVNode) {
+    parent.removeChild(parent.childNodes[index])
+  } else if(newVNode.tag !== oldVNode.tag || newVNode.text !== oldVNode.text) {
+    parent.replaceChild(newVNode.render(), parent.childNodes[index])
+  }  else {
+    for(let i = 0; i &lt; newVNode.children.length || i &lt; oldVNode.children.length; i++) {
+      patchElement(parent.childNodes[index], newVNode.children[i], oldVNode.children[i], i)
+    }
+  }
+}
+
+
+
+let vNode1 = v('div', [
+      v('p', [
+        v('span', [ v('#text', 'hi') ] )
+        ]
+      ),
+      v('span', [
+        v('#text',  'oo')
+        ])
+    ]
+  )
+
+let vNode2 = v('div', [
+      v('p', [
+        v('span', [ 
+          v('#text', 'hi') 
+          ] )
+        ]
+      ),
+      v('span', [
+        v('#text',  'oo'),
+        v('#text',  'xx')
+        ])
+    ]
+  )
+const root = document.querySelector('#root')
+patchElement(root, vNode1)
+patchElement(root, vNode1，vNode2)
+
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2020 808Mak1r
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

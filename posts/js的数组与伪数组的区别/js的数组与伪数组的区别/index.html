@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='JS的数组与伪数组的区别'><title>JS的数组与伪数组的区别</title>
+
+<link rel='canonical' href='https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='JS的数组与伪数组的区别'>
+<meta property='og:description' content='JS的数组与伪数组的区别'>
+<meta property='og:url' content='https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/'>
+<meta property='og:site_name' content='808Mak1r'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='前端' /><meta property='article:published_time' content='2019-04-13T17:28:10&#43;08:00'/><meta property='article:modified_time' content='2019-04-13T17:28:10&#43;08:00'/>
+<meta name="twitter:title" content="JS的数组与伪数组的区别">
+<meta name="twitter:description" content="JS的数组与伪数组的区别">
+    </head>
+    <body class="article-page keep-sidebar">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu639e11651d22d4499f5a1ba9543dc353_27179_300x0_resize_box_2.png" width="300"
+                            height="301" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://808Mak1r.github.io">808Mak1r</a></h1>
+        <h2 class="site-description">kekeke~~~</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/" >
+                博客
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/">JS的数组与伪数组的区别</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        JS的数组与伪数组的区别
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Apr 13, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p>在JavaScript中，除了6种原始数据类型之外，其他所有的都是对象，包括函数（Function）。</p>
+<p>基本数据类型：String,boolean,Number,Undefined, Null,Symbol</p>
+<p>引用数据类型：Object(Array,Date,RegExp,Function)</p>
+<p>在这个前提下，咱们再来讨论JavaScript的对象。</p>
+<h1 id="创建对象">创建对象</h1>
+<pre><code>var obj = {}; //种方式创建对象，被称之为对象直接量（Object Literal）
+var obj = new Object(); // 创建一个空对象，和{}一样
+</code></pre><h1 id="创建数组">创建数组</h1>
+<pre><code>var arr = [];//这是使用数组直接量（Array Literal）创建数组
+var arr = new Array();//构造函数Array() 创建数组对象
+</code></pre><h1 id="对象与数组的关系">对象与数组的关系</h1>
+<p>在说区别之前，需要先提到另外一个知识，就是JavaScript的原型继承。所有JavaScript的内置构造函数都是继承自 Object.prototype。在这个前提下，可以理解为使用 new Array() 或 [] 创建出来的数组对象，都会拥有 Object.prototype 的属性值。</p>
+<pre><code>var obj = {};// 拥有Object.prototype的属性值
+var arr = [];
+//使用数组直接量创建的数组，由于Array.prototype的属性继承自 Object.prototype，
+//那么，它将同时拥有Array.prototype和Object.prototype的属性值
+</code></pre><p>可以得到对象和数组的第一个区别：对象没有数组Array.prototype的属性值</p>
+<h1 id="什么是数组">什么是数组</h1>
+<p>数组具有一个最基本特征：索引，这是对象所没有的，下面来看一段代码：</p>
+<pre><code>var obj = {};
+var arr = [];
+ 
+obj[2] = 'a';
+arr[2] = 'a';
+ 
+console.log(obj[2]); // 输出 a
+console.log(arr[2]); // 输出 a
+console.log(obj.length); // 输出 undefined
+console.log(arr.length); // 输出 3
+</code></pre><p>通过上面这个测试，可以看到，虽然 obj[2]与arr[2] 都输出&rsquo;a'，但是，在输出length上有明显的差异，这是为什么呢？</p>
+<h2 id="obj2与arr2的区别">obj[2]与arr[2]的区别</h2>
+<ul>
+<li>obj[2]输出&rsquo;a'，是因为对象就是普通的键值对存取数据</li>
+<li>而arr[2]输出&rsquo;a&rsquo;则不同，数组是通过索引来存取数据，arr[2]之所以输出&rsquo;a'，是因为数组arr索引2的位置已经存储了数据</li>
+</ul>
+<h2 id="objlength与arrlength的区别">obj.length与arr.length的区别</h2>
+<ul>
+<li>obj.length并不具有数组的特性，并且obj没有保存属性length，那么自然就会输出undefined</li>
+<li>而对于数组来说，length是数组的一个内置属性，数组会根据索引长度来更改length的值。</li>
+</ul>
+<h2 id="为什么arrlength输出3而不是1呢">为什么arr.length输出3，而不是1呢？</h2>
+<p>这是由于数组的特殊实现机制，对于普通的数组，如果它的索引是从0开始连续的，那么length的值就会等于数组中元素个数</p>
+<p>而对于上面例子中arr，在给数组添加元素时，并没有按照连续的索引添加，所以导致数组的索引不连续，那么就导致索引长度大于元素个数，那么我们称之为稀疏数组。</p>
+<h1 id="伪数组">伪数组</h1>
+<p>定义：</p>
+<ol>
+<li>拥有length属性，其它属性（索引）为非负整数(对象中的索引会被当做字符串来处理，这里你可以当做是个非负整数串来理解)</li>
+<li>不具有数组所具有的方法</li>
+</ol>
+<p>伪数组，就是像数组一样有 length 属性，也有 0、1、2、3 等属性的对象，看起来就像数组一样，但不是数组，比如</p>
+<pre><code>var fakeArray = {
+    length: 3,
+    &quot;0&quot;: &quot;first&quot;,
+    &quot;1&quot;: &quot;second&quot;,
+    &quot;2&quot;: &quot;third&quot;
+};
+ 
+for (var i = 0; i &lt; fakeArray.length; i++) {
+    console.log(fakeArray[i]);
+}
+ 
+Array.prototype.join.call(fakeArray,'+');
+</code></pre><p>常见的参数的参数 arguments，DOM 对象列表（比如通过 document.getElementsByTags 得到的列表），jQuery 对象（比如 $(&ldquo;div&rdquo;)）。</p>
+<p>伪数组是一个 Object，而真实的数组是一个 Array</p>
+<pre><code>fakeArray instanceof Array === false;
+Object.prototype.toString.call(fakeArray) === &quot;[object Object]&quot;;
+ 
+var arr = [1,2,3,4,6];
+arr instanceof Array === true;
+Object.prototype.toString.call(arr) === &quot;[object Array]&quot;
+</code></pre><p>代码用来判断一个对象是否属于“类数组”。如下：</p>
+<pre><code>// Determine if o is an array-like object.
+// Strings and functions have numeric length properties, but are
+// excluded by the typeof test. In client-side JavaScript, DOM text
+// nodes have a numeric length property, and may need to be excluded
+// with an additional o.nodeType != 3 test.
+function isArrayLike(o) {   
+    if (o &amp;&amp;                                // o is not null, undefined, etc.
+            typeof o === 'object' &amp;&amp;            // o is an object
+            isFinite(o.length) &amp;&amp;               // o.length is a finite number
+            o.length &gt;= 0 &amp;&amp;                    // o.length is non-negative
+            o.length===Math.floor(o.length) &amp;&amp;  // o.length is an integer
+            o.length &lt; 4294967296)              // o.length &lt; 2^32
+            return true;                        // Then o is array-like
+    else
+            return false;                       // Otherwise it is not
+}
+</code></pre><p>不过有个更简单的办法来判断，用 Array.isArray</p>
+<pre><code>Array.isArray(fakeArray) === false;
+Array.isArray(arr) === true;
+</code></pre><p>从外观上看伪数组，看不出来它与数组的区别，在JavaScript内置对象中常见的伪数组就是大名鼎鼎的auguments：</p>
+<pre><code>(function() {
+  console.log(typeof arguments); // 输出 object，它并不是一个数组
+}());
+</code></pre><p>另外在DOM对象中，childNodes也是伪数组</p>
+<pre><code>console.log(typeof document.body.childNodes); // 输出 object
+</code></pre><p>除此之外，还有很多常用的伪数组，就不一一列举。</p>
+<p>伪数组存在的意义，是可以让普通的对象也能正常使用数组的很多算法，比如：</p>
+<pre><code>var arr = Array.prototype.slice.call(arguments)
+ 
+或者
+var arr = Array.prototype.slice.call(arguments, 0); // 将arguments对象转换成一个真正的数组
+ 
+Array.prototype.forEach.call(arguments, function(v) {
+  // 循环arguments对象
+});
+</code></pre><p>除了使用 Array.prototype.slice.call(arguments)，你也可以简单的使用[].slice.call(arguments) 来代替。另外，你可以使用 bind 来简化该过程。</p>
+<pre><code>var unboundSlice = Array.prototype.slice;
+var slice = Function.prototype.call.bind(unboundSlice);
+ 
+function list() {
+  return slice(arguments);
+}
+ 
+var list1 = list(1, 2, 3); // [1, 2, 3]
+</code></pre><p>将具有length属性的对象转换成数组对象，arguments是每个函数在运行的时候自动获得的一个近似数组的对象（传入函数的参数从0开始按数字排列，而且有length）。</p>
+<p>比如当你 func(&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;) 的时候，func里面获得的arguments[0] 是 &lsquo;a&rsquo;，arguments[1] 是 &lsquo;b&rsquo;，依次类推。但问题在于这个arguments对象其实并不是Array，所以没有slice方法。Array.prototype.slice.call( )可以间接对其实现slice的效果，而且返回的结果是真正的Array。</p>
+<p>对于IE9以前的版本(DOM实现基于COM)，我们可以使用makeArray来实现。</p>
+<pre><code>// 伪数组转化成数组
+var makeArray = function(obj) {   
+    if (!obj || obj.length === 0) {       
+        return [];
+    }   
+    // 非伪类对象，直接返回最好
+    if (!obj.length) {       
+        return obj;
+    }   
+    // 针对IE8以前 DOM的COM实现
+    try {       
+        return [].slice.call(obj);
+    } catch (e) {       
+        var i = 0,
+            j = obj.length,
+            res = [];       
+        for (; i &lt; j; i++) {
+            res.push(obj[i]);
+        }
+        return res;
+    }
+ 
+};
+</code></pre><h1 id="总结">总结</h1>
+<p>对象没有数组Array.prototype的属性值，类型是Object，而数组类型是Array；</p>
+<p>数组是基于索引的实现，length会自动更新，而对象是键值对；</p>
+<p>使用对象可以创建伪数组，伪数组可以正常使用数组的大部分方法；</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2020 808Mak1r
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

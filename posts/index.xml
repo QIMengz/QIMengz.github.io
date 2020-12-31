@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 20 Aug 2019 17:57:12 +0800</lastBuildDate><atom:link href="https://808Mak1r.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>试着去理解虚拟DOM</title>
-      <link>https://808Mak1r.github.io/posts/test-post/</link>
+      <link>https://808Mak1r.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/test-post/</link>
       <pubDate>Tue, 20 Aug 2019 17:57:12 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/test-post/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9Fdom/test-post/</guid>
       <description>去掉虚拟两个字，先了解下什么是DOM？  在原生JS中有DOM操作，就是使用浏览器提供的一些API，选中一个元素对它进行操作，比如说：增加一个属性、增加一个孩子、修改它里面的内容、改变它的位置，直接对DOM操作。这个DOM实际上对应的就是浏览器里面你所能看的见的对应的某个元素。
  那什么是虚拟DOM  假设我们要操作一个数据的报表，这个报表大概有几百条数据，我们要对这个报表进行一个排序的操作
  我们有这样一个表格，这里面大概有100多项
@@ -28,10 +28,10 @@
     
     <item>
       <title>Cookie是什么</title>
-      <link>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</link>
-      <pubDate>Fri, 05 Jul 2019 14:36:40 +0800</pubDate>
+      <link>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Fri, 05 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <guid>https://808Mak1r.github.io/posts/cookie%E6%98%AF%E4%BB%80%E4%B9%88/cookie%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
       <description>维基百科定义 Cookie（复数形态Cookies），又称为“小甜饼”。类型为“小型文本文件”[1]，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。由网景公司的前雇员卢·蒙特利在1993年3月发明[2]。最初定义于RFC 2109。当前使用最广泛的 Cookie标准却不是RFC中定义的任何一个，而是在网景公司制定的标准上进行扩展后的产物。
 我的理解  Cookie就是用户登录网站，浏览器去访问服务器问这个人能不能登录，然后服务器传送给浏览器的一段数据。 浏览器会保留这段数据，不能随便删除（一般默认20分钟左右，浏览器不同具体时间不同） 然后这段时间内用户通过浏览器继续访问服务器，都必须带一个Cookie Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间 大小大概在 4kb 以内  Cookie的特点  服务器通过 Set-Cookie 响应头设置Cookie 浏览器得到Cookie之后，每次请求都要带上Cookie 服务器读取Cookie就知道登录用户的信息（用户名啥的）  如何使用 Cookie Cookie 一般有两个作用。
 第一个作用是识别用户身份 比如用户小红用浏览器访问了 http://qq.com，那么qq 的服务器就会立刻给小红返回一段数据就是Cookie。当 小红 再次访问qq的其他页面时，就会附带上这段数据。
@@ -44,19 +44,19 @@
     
     <item>
       <title>JS高级基础知识小结</title>
-      <link>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</link>
+      <link>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Sat, 29 Jun 2019 15:31:03 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</guid>
       <description>原型与原型链 var object = {} object.__proto__ === Object.prototype // 为 true var fn = function(){} fn.__proto__ === Function.prototype // 为 true fn.__proto__.__proto__ === Object.prototype // 为 true var array = [] array.__proto__ === Array.prototype // 为 true array.__proto__.__proto__ === Object.prototype // 为 true Function.__proto__ === Function.prototype // 为 true Array.__proto__ === Function.prototype // 为 true Object.__proto__ === Function.prototype // 为 true true.__proto__ === Boolean.prototype // 为 true Function.prototype.__proto__ === Object.prototype // 为 true 面向对象new与this function fn(){ console.</description>
     </item>
     
     <item>
       <title>面试题小计</title>
-      <link>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Thu, 06 Jun 2019 17:35:48 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
       <description>请写出一个符合 W3C 规范的 HTML 文件 要求
 页面标题为「我的页面」
 页面中引入了一个外部 CSS 文件，文件路径为 /style.css
@@ -72,10 +72,10 @@
     
     <item>
       <title>自己写一个简版jQuery</title>
-      <link>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</link>
+      <link>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</link>
       <pubDate>Wed, 24 Apr 2019 18:49:36 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/</guid>
       <description>为了便于学习与理解jQuery，自己尝试去写一个只有两个API的简版jQuery。
 什么是JQuery jQuery是js的一个工具库，由John Resig在2006年发布。
 j代表JavaScript，query是“查询”的意思。也就是说，这个库的意图是基于JavaScript的查询。
@@ -90,10 +90,10 @@ window.jQuery = function(nodeOrSelector) { let nodes = {} if (typeof nodeOrSelec
     
     <item>
       <title>JS函数的五种声明方式</title>
-      <link>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</link>
+      <link>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Wed, 17 Apr 2019 17:58:27 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/js%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</guid>
       <description>具名函数 function f(x,y){return x +y } 关键字+函数名+参数+{} function 和var意思差不多，表示声明一个特殊的变量（对象）
 匿名函数 f = function(x,y){return x +y } 给变量赋值一个具名函数 f = function n(x,y){return x +y } 函数n的作用域只限函数内，和具名函数不同，体现了JS的不一致性，不建议使用。
 函数对象 window.Fuction函数对象 new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x + y &#39;) var n = 1 new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x&#39; +n+ &#39;return y &#39;) f(1,2) //4 //等同于 //new Fuction (&#39;x&#39;,&#39;y&#39;,&#39;return x+n+ y&#39;) 箭头函数 箭头函数都是匿名函数
@@ -102,10 +102,10 @@ f=(x,y) =&amp;gt; { return x + y} sum = (x,y) =&amp;gt; {return x + y} sum(1,2) 
     
     <item>
       <title>JS的数组与伪数组的区别</title>
-      <link>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <link>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Sat, 13 Apr 2019 17:28:10 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/js%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>在JavaScript中，除了6种原始数据类型之外，其他所有的都是对象，包括函数（Function）。
 基本数据类型：String,boolean,Number,Undefined, Null,Symbol
 引用数据类型：Object(Array,Date,RegExp,Function)
@@ -118,10 +118,10 @@ var obj = {}; var arr = []; obj[2] = &#39;a&#39;; arr[2] = &#39;a&#39;; console.
     
     <item>
       <title>常见DOM以及API总结</title>
-      <link>https://808Mak1r.github.io/posts/test-post/</link>
+      <link>https://808Mak1r.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/test-post/</link>
       <pubDate>Fri, 12 Apr 2019 10:41:20 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/test-post/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E5%B8%B8%E8%A7%81dom%E4%BB%A5%E5%8F%8Aapi%E6%80%BB%E7%BB%93/test-post/</guid>
       <description>DOM DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
 浏览器会根据 DOM 模型，将结构化文档（比如 HTML 和 XML）解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。
 DOM 只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是 JavaScript 语法的一部分，但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。另一方面，JavaScript 也是最常用于 DOM 操作的语言。后面介绍的就是 JavaScript 对 DOM 标准的实现和用法。
@@ -135,10 +135,10 @@ document.nodeType === Node.DOCUMENT_NODE // true 上面代码中，文档节点�
     
     <item>
       <title>原型与原型链</title>
-      <link>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <link>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
       <pubDate>Sat, 06 Apr 2019 19:12:56 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
       <description>再讲原型与原型链的前提下先讲些概念方便理解
  对象是什么 面向对象编程（Object Oriented Programming，缩写为 OOP）是目前主流的编程范式。它将真实世界各种复杂的关系，抽象为一个个对象，然后由对象之间的分工与合作，完成对真实世界的模拟。
 每一个对象都是功能中心，具有明确分工，可以完成接受信息、处理数据、发出信息等任务。对象可以复用，通过继承机制还可以定制。因此，面向对象编程具有灵活、代码可复用、高度模块化等特点，容易维护和开发，比起由一系列函数或指令组成的传统的过程式编程（procedural programming），更适合多人合作的大型软件项目。
@@ -162,10 +162,10 @@ var Vehicle = function (p) { this.price = p; }; var v = new Vehicle(500); new命
     
     <item>
       <title>JS数组API运用相关代码总结</title>
-      <link>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</link>
+      <link>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</link>
       <pubDate>Fri, 05 Apr 2019 19:13:22 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/js%E6%95%B0%E7%BB%84api%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</guid>
       <description>自己总结代码题 1.使得 students 按分数的高低从大到小排列
 var students = [&#39;小明&#39;,&#39;小红&#39;,&#39;小花&#39;] var scores = { 小明: 59, 小红: 99, 小花: 80 } students.sort(???) 请填写 ??? 使得 students 按分数的高低从大到小排列
 function ( x , y ) { return scores[y]-scores[x] }   var a = [1,2,3,4,5,6,7,8,9] a.filter(???).map(???) // [4,16,36,64]  获取所有偶数 得到所有偶数的平方  a.filter( function ( value , key ) { return value % 2 === 0 }).map ( function ( value ) { return value * value })   var a = [1,2,3,4,5,6,7,8,9] a.</description>
@@ -173,10 +173,10 @@ function ( x , y ) { return scores[y]-scores[x] }   var a = [1,2,3,4,5,6,7,8,9] 
     
     <item>
       <title>JS里的数据类型转换</title>
-      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Thu, 04 Apr 2019 19:52:50 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
       <description>类型转换 本文分别讲下数据类型之间的相互转换
 转换为string    数据类型.toString    数据类型 string     number toString   boolean toString   symbol 不研究   null 报错   undefined 报错   object toString   2.     数据类型 + &#39;&#39; &#39;&#39; + 数据类型 3.
 window.String(/*数据类型*/) 转换为boolean    Boolean(/*数据类型*/)   因为!表示取反 !!表示负负得正
@@ -185,10 +185,10 @@ window.String(/*数据类型*/) 转换为boolean    Boolean(/*数据类型*/)   
     
     <item>
       <title>JS里的数据类型</title>
-      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Wed, 03 Apr 2019 18:42:20 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://808Mak1r.github.io/posts/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/js%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>JS里的7种数据类型 JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。（ES6 新增的第七种 Symbol 类型的值，不描述。）
  数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 null：表示空值，即此处的值为空。 对象（object）：各种值组成的集合。 Symbol（符号）：https://developer.mozilla.org/zh-CN/docs/Glossary/Symbol  string 表示可以用
 &#39; &#39;//空字符串 &amp;quot; &amp;quot;//空字符串 转义符号为\
@@ -201,10 +201,10 @@ var s4 = &#39;12345 //此处5后面有个回车 67890&#39;//实际为11个字符
     
     <item>
       <title>CSS布局</title>
-      <link>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/</link>
+      <link>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/css%E5%B8%83%E5%B1%80/</link>
       <pubDate>Wed, 20 Mar 2019 20:53:01 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://808Mak1r.github.io/posts/css%E5%B8%83%E5%B1%80/css%E5%B8%83%E5%B1%80/</guid>
       <description>CSS布局 float 布局 float 布局应该是目前各大网站用的最多的一种布局方式了，但是也特别复杂，这里详细讲一下
 首先，什么是浮动？
 浮动元素是脱离文档流的，但不脱离文本流，这是什么意思呢，用过 word 的应该知道有一种图片环绕的方式是文字环绕吧，就是这种效果。
@@ -216,10 +216,10 @@ var s4 = &#39;12345 //此处5后面有个回车 67890&#39;//实际为11个字符
     
     <item>
       <title>如何用CSS画一个太极</title>
-      <link>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</link>
+      <link>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</link>
       <pubDate>Tue, 19 Mar 2019 20:58:12 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/%E5%A6%82%E4%BD%95%E7%94%A8css%E7%94%BB%E4%B8%80%E4%B8%AA%E5%A4%AA%E6%9E%81/</guid>
       <description>本文将介绍如何用CSS画一个太极图
 首先 画一个方块黑白各一半
 body { background-color: lightslategray; } .yy { width: 0px; height: 600px; border-left: 300px solid black; border-right: 300px solid white; } 如图 再画白色部分的园（先画方块）
@@ -232,10 +232,10 @@ body { background-color: lightslategray; } .yy { width: 0px; height: 600px; bord
     
     <item>
       <title>HTML常用标签</title>
-      <link>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <link>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Sun, 17 Mar 2019 15:59:25 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <guid>https://808Mak1r.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
       <description>1.HTML5头部结构 【DOCTYPE html】 声明文档类型为HTML5文件。 文档声明在HTML5文档必不可少，且必须放在文档的第一行。
 【meta标签】 1-charset属性：单独使用，设置文档字符及编码格式。 写法：
 &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; 常见的中文编码格式： B-2312:国标码，简体中文 GBK：扩展的国标编码，简体中文 UTF-8:万国码 Unicode码，基本兼容各国语言 2-http-equiv属性：需配合content属性使用。主要声明浏览器如何解释编译文件。 写法：```html
@@ -251,10 +251,10 @@ body { background-color: lightslategray; } .yy { width: 0px; height: 600px; bord
     
     <item>
       <title>HTML简介</title>
-      <link>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/</link>
+      <link>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/html%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Sat, 16 Mar 2019 20:13:36 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://808Mak1r.github.io/posts/html%E7%AE%80%E4%BB%8B/html%E7%AE%80%E4%BB%8B/</guid>
       <description>什么是W3C 万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织。为半自治非政府组织（quasi-autonomous non-governmental organisation）。
 历史 万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS），DARPA曾率先推出了互联网及其前身ARPANET。
 该组织试图透过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。
@@ -271,10 +271,10 @@ HTML标签列表 根元素节 &amp;lt;html&amp;gt;	代表 HTML 或 XHTML 文档�
     
     <item>
       <title>关于HTTP的请求与相应</title>
-      <link>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</link>
+      <link>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</link>
       <pubDate>Fri, 15 Mar 2019 16:42:06 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/%E5%85%B3%E4%BA%8Ehttp%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E7%9B%B8%E5%BA%94/</guid>
       <description>HTTP请求的格式 1 动词 路径 协议/版本 2 Key1: value1 2 Content-Type: application/x-www-form-urlencoded 2 Host: www.baidu.com 2 User-Agent: curl/7.54.0 3 4 要上传的数据 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空） 第三部分永远都是一个回车（\n）
 当浏览器向Web服务器发出请求时，它向服务器传递了一个数据块，也就是请求信息，HTTP请求信息由3部分组成：（1）请求方法URI协议/版本（2）　请求头(Request Header)（3）　请求正文 （1）请求方法URI协议/版本 请求的第一行是“方法URI协议/版本”例如：GET/sample.jsp HTTP/1.1 以上代码中“GET”代表请求方法，“/sample.jsp”表示URI，“HTTP/1.1代表协议和协议的版本。 （2）请求头(Request Header) 请求头包含许多有关的客户端环境和请求正文的有用信息。例如，请求头可以声明浏览器所用的语言，请求正文的长度等。例如： Accept:image/gif.image/jpeg./ Accept-Language:zh-cn Connection:Keep-Alive Host:localhost User-Agent:Mozila/4.0(compatible:MSIE5.01:Windows NT5.0) Accept-Encoding:gzip,deflate. （3）请求正文 请求头和请求正文之间是一个空行，这个行非常重要，它表示请求头已经结束，接下来的是请求正文。请求正文中可以包含客户提交的查询字符串信息： username=jinqiao&amp;amp;password=1234
 用Chrome查看请求 1.打开检查，进入Network 2.在地址栏输入网址 3.在 Network 点击，查看 request，点击「view source」 4.如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到
@@ -285,10 +285,10 @@ HTTP响应 请求了之后，应该都能得到一个响应，除非断网了，
     
     <item>
       <title>命令行相关</title>
-      <link>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</link>
+      <link>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Thu, 14 Mar 2019 12:46:03 +0800</pubDate>
       
-      <guid>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://808Mak1r.github.io/posts/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3/</guid>
       <description>ls 查看路径
 cat 1.一次显示整个文件。 $ cat filename 2.从键盘创建一个文件。 $ cat &amp;gt; filename 只能创建新文件,不能编辑已有文件. 3.将几个文件合并为一个文件。 $cat file1 file2 &amp;gt; file
 mv mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录

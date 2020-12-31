@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='CSS布局'><title>CSS布局</title>
+
+<link rel='canonical' href='http://808Mak1r.github.io/p/css%E5%B8%83%E5%B1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='CSS布局'>
+<meta property='og:description' content='CSS布局'>
+<meta property='og:url' content='http://808Mak1r.github.io/p/css%E5%B8%83%E5%B1%80/'>
+<meta property='og:site_name' content='808Mak1r'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端' /><meta property='article:published_time' content='2019-03-20T20:53:01&#43;08:00'/><meta property='article:modified_time' content='2019-03-20T20:53:01&#43;08:00'/>
+<meta name="twitter:title" content="CSS布局">
+<meta name="twitter:description" content="CSS布局">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu639e11651d22d4499f5a1ba9543dc353_27179_300x0_resize_box_2.png" width="300"
+                            height="301" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://808Mak1r.github.io">808Mak1r</a></h1>
+        <h2 class="site-description">kekeke~~~</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://808Mak1r.github.io" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/css%E5%B8%83%E5%B1%80/">CSS布局</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        CSS布局
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 20, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="css布局">CSS布局</h2>
+<h2 id="float-布局">float 布局</h2>
+<p>float 布局应该是目前各大网站用的最多的一种布局方式了，但是也特别复杂，这里详细讲一下</p>
+<p>首先，什么是浮动？</p>
+<p>浮动元素是脱离文档流的，但不脱离文本流，这是什么意思呢，用过 word 的应该知道有一种图片环绕的方式是文字环绕吧，就是这种效果。</p>
+<p>那么它有什么特点呢</p>
+<ul>
+<li>对自身的影响
+<ul>
+<li>float 元素可以形成块，如 span元素。可以让行内元素也拥有宽和高，因为块级元素具有宽高</li>
+<li>浮动元素的位置尽量靠上</li>
+<li>尽量靠左（float:left）或右（float:right），如果那一行满足不了浮动元素的宽度要求，则元素会往下掉</li>
+</ul>
+</li>
+<li>对兄弟元素的影响
+<ul>
+<li>不影响其他块级元素的位置</li>
+<li>影响其他块级元素的文本</li>
+<li>上面贴非 float 元素</li>
+<li>旁边贴 float 元素或者边框</li>
+</ul>
+</li>
+<li>对父级元素的影响
+<ul>
+<li>从布局上 “消失”</li>
+<li>高度塌陷</li>
+</ul>
+</li>
+</ul>
+<p>如果有以下html结构，设置<strong>左右两栏布</strong>局</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+  &lt;div class=&quot;leftChild&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;rightChild&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><ul>
+<li><strong>设置浮动</strong>：左右布局常用的方法就是为子元素设置浮动，然后在其<strong>父元素上使用clearfix类</strong>清除浮动。示例代码如下：</li>
+</ul>
+<pre><code>.clearfix::after{
+  content:&quot;&quot;;
+  display:block;
+  clear:both;
+}
+.leftChild,
+.rightChild{
+  float:left;
+}
+</code></pre><p>-<strong>设置position</strong>绝对定位，为父元素设置position:relative; 为子元素设置position:absolute 。示例代码如下：</p>
+<pre><code>.parent{
+  position:relative;
+}
+.leftChild{
+  position:absolute;
+  left:0;
+  top:0;
+}
+.rightChild{
+  position:absolute;
+  left:200px;
+  top:0;
+}
+</code></pre><p><strong>三栏布局</strong></p>
+<p>左中右布局主要方法也是浮动或者绝对定位，不过可以分情况选择其一使用甚至结合使用。</p>
+<p>三栏布局，思路主要是左边一个浮动元素，右边一个浮动元素。这里有个小问题，中间的元素要写在最后，因为中间元素假设有块级元素的话，会影响右边浮动元素的定位，这里演示一下</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;CSS 布局&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 400px;
+    height: 200px;
+}
+
+.left{
+    background-color: yellow; 
+    float: left;
+    height: 100%;
+    width:100px;
+}
+.right{
+    background-color: green; 
+    float: right;
+    height: 100%;
+    width:100px;
+}
+.middle{
+    background-color: red; 
+    margin-left: 100px;
+    margin-right: 100px;
+    height:100%;
+}
+.container::after{
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both
+}
+
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=container&gt;       
+        &lt;div class=left&gt;&lt;/div&gt;
+        &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+        &lt;div class=right&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>因为浮动元素会把块级元素的位置空出来，所以这里右边的浮动元素把上面的位置空了下来，所以正确的写法应该是</p>
+<pre><code>&lt;div class=container&gt;       
+        &lt;div class=left&gt;&lt;/div&gt;
+        &lt;div class=right&gt;&lt;/div&gt;
+        &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p><strong>特定情况下使用浮动还是绝对定位</strong></p>
+<ul>
+<li>使用浮动时：不需要计算特别精确的位置，不过不易操控，浮动元素的宽度需要注意，否则会换行展示，适用于导航栏等地方。</li>
+<li>使用绝对定位：需要计算元素的具体位置，不过更加准确，易于操控。</li>
+<li>当某些元素的位置要根据父元素的大小自适应，内容宽度无法确定时，建议使用浮动</li>
+<li>当特定元素的位置是相对父元素固定，或者内容宽高确定，需要精确定位甚至以后要用js操作变换位置时，建议使用浮动</li>
+</ul>
+<h2 id="关于居中">关于居中</h2>
+<p><strong>水平居中</strong></p>
+<ul>
+<li>文字的水平居中</li>
+</ul>
+<p>将一段文字置于容器的水平中点，只要设置text-align属性即可：</p>
+<pre><code>　text-align:center;
+</code></pre><ul>
+<li>容器的水平居中</li>
+</ul>
+<p>先为该容器设置一个明确宽度，然后将margin的水平值设为auto即可。</p>
+<pre><code>　　div#container {
+　　　　width:760px;
+　　　　margin:0 auto;
+　　}
+</code></pre><p><strong>垂直居中</strong></p>
+<ul>
+<li>文字的垂直居中</li>
+</ul>
+<p>单行文字的垂直居中，只要将行高与容器高设为相等即可。</p>
+<p>比如，容器中有一行数字。</p>
+<pre><code>　　&lt;div id=&quot;container&quot;&gt;1234567890&lt;/div&gt;
+</code></pre><p>然后CSS这样写：</p>
+<pre><code>  div#container {height: 35px; line-height: 35px;}
+</code></pre><ul>
+<li>容器的垂直居中</li>
+</ul>
+<p>比如，有一大一小两个容器，请问如何将小容器垂直居中？</p>
+<pre><code>　　&lt;div id=&quot;big&quot;&gt;
+　　　　&lt;div id=&quot;small&quot;&gt;
+　　　　&lt;/div&gt;
+　　&lt;/div&gt;
+</code></pre><p>首先，将大容器的定位为relative。</p>
+<pre><code>　　div#big{
+　　　　position:relative;
+　　　　height:480px;
+　　}
+</code></pre><p>然后，将小容器定位为absolute，再将它的左上角沿y轴下移50%，最后将它margin-top上移本身高度的50%即可。</p>
+<pre><code>　　div#small {
+　　　　position: absolute;
+　　　　top: 50%;
+　　　　height: 240px;
+　　　　margin-top: -120px;
+　　}
+</code></pre><p>使用同样的思路，也可以做出水平居中的效果。</p>
+<h3 id="关于css布局的小技巧">关于CSS布局的小技巧</h3>
+<p><strong>图片宽度的自适应</strong></p>
+<p>如何使得较大的图片，能够自动适应小容器的宽度？CSS可以这样写：</p>
+<pre><code>    img {max-width: 100%}
+</code></pre><p><strong>CSS的优先性</strong></p>
+<p>如果同一个容器被多条CSS语句定义，那么哪一个定义优先呢？</p>
+<p>基本规则是：</p>
+<p><strong>行内样式 &gt; id样式 &gt; class样式 &gt; 标签名样式</strong></p>
+<p>比如，有一个元素：</p>
+<pre><code>  &lt;div id=&quot;ID&quot; class=&quot;CLASS&quot; style=&quot;color:black;&quot;&gt;
+  &lt;/div&gt;
+</code></pre><p>行内样式是最优先的，然后其他设置的优先性，从低到高依次为：</p>
+<pre><code>  div &lt; .class &lt; div.class &lt; #id &lt; div#id &lt; #id.class &lt; div#id.class
+</code></pre><p><strong>用图片充当列表标志</strong></p>
+<p>默认情况下，浏览器使用一个黑圆圈作为列表标志，可以用图片取代它：</p>
+<pre><code>　　ul {list-style: none}
+
+　　ul li { 
+　　　　background-image: url(&quot;path-to-your-image&quot;); 
+　　　　background-repeat: none; 
+　　　　background-position: 0 0.5em; 
+　　}
+</code></pre><p><strong>透明</strong></p>
+<p>将一个容器设为透明，可以使用下面的代码：</p>
+<pre><code>　　.element { 
+　　　　filter:alpha(opacity=50); 
+　　　　-moz-opacity:0.5; 
+　　　　-khtml-opacity: 0.5; 
+　　　　opacity: 0.5; 
+　　}
+</code></pre><p><strong>CSS三角形</strong></p>
+<p>如何使用CSS生成一个三角形？</p>
+<p>先编写一个空元素</p>
+<pre><code>&lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;
+</code></pre><p>然后，将它四个边框中的三个边框设为透明，剩下一个设为可见，就可以生成三角形效果：</p>
+<pre><code>　　.triangle { 
+　　　　border-color: transparent transparent green transparent; 
+　　　　border-style: solid; 
+　　　　border-width: 0px 300px 300px 300px; 
+　　　　height: 0px; 
+　　　　width: 0px; 
+　　}
+</code></pre><p>其他图形可以用同样的道理画出。</p>
+<p><strong>CSS提示框</strong>
+当鼠标移动到链接上方，会自动出现一个提示框。</p>
+<pre><code>&lt;a class=&quot;tooltip&quot; href=&quot;#&quot;&gt;链接文字 &lt;span&gt;提示文字&lt;/span&gt;
+&lt;/a&gt;
+</code></pre><p>CSS这样写：</p>
+<pre><code>　　a.tooltip {position: relative} 
+　　a.tooltip span {display:none; padding:5px; width:200px;} 
+　　a:hover {background:#fff;} /*background-color is a must for IE6*/ 
+　　a.tooltip:hover span{display:inline; position:absolute;}
+</code></pre><p><strong>固定位置的页首</strong></p>
+<p>当页面滚动时，有时需要页首在位置固定不变，CSS语句可以这样写，效果参见http://limpid.nl/lab/css/fixed/header：</p>
+<pre><code>　　body{ margin:0;padding:100px 0 0 0;}
+
+　　div#header{
+　　　　position:absolute;
+　　　　top:0;
+　　　　left:0;
+　　　　width:100%;
+　　　　height:&lt;length&gt;;
+　　}
+
+　　@media screen{
+　　　　body&gt;div#header{position: fixed;}
+　　}
+
+　　* html body{overflow:hidden;}
+
+　　* html div#content{height:100%;overflow:auto;}
+</code></pre><p><strong>容器的水平和垂直居中</strong></p>
+<p>HTML代码如下</p>
+<pre><code class="language-　　" data-lang="　　">  &lt;figure class='logo'&gt;
+
+　&lt;span&gt;&lt;/span&gt;
+
+　&lt;img class='photo'/&gt;
+
+  &lt;/figure&gt;
+</code></pre><p>CSS代码如下：</p>
+<pre><code>.logo {
+　　　　display: block;
+　　　　text-align: center;
+　　　　display: block;
+　　　　text-align: center;
+　　　　vertical-align: middle;
+　　　　border: 4px solid #dddddd;
+　　　　padding: 4px;
+　　　　height: 74px;
+　　　　width: 74px; }
+
+　　.logo * {
+　　　　display: inline-block;
+　　　　height: 100%;
+　　　　vertical-align: middle; }
+
+　　.logo .photo {
+　　　　height: auto;
+　　　　width: auto;
+　　　　max-width: 100%;
+　　　　max-height: 100%; }
+</code></pre><hr>
+<p><strong>本博客相关内容出处来自阮一峰的博客</strong></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/test-post/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">试着去理解虚拟DOM</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/cookie%E6%98%AF%E4%BB%80%E4%B9%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Cookie是什么</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/js%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JS高级基础知识小结</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%B0%8F%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">面试题小计</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jquery/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">自己写一个简版jQuery</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2020 808Mak1r
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
