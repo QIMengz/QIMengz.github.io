@@ -250,23 +250,134 @@
 <p>上传到web并在client执行</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">abpttsclient</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">c</span> <span class="n">server</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&#34;http://xx.com/tyu.jsp&#34;</span> <span class="o">-</span><span class="n">f</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">4444</span><span class="o">/</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">12344</span>
 <span class="c1"># abptts客户端监听127.0.0.1:7777，通过http://192.168.168.121/abptts.aspx这个http隧道，将tcp连接127.0.0.1:7777转发到web服务器网络下的127.0.0.1:8888</span>
-</code></pre></div><p><img src="./image-20201105172524186.png" alt="image-20201105172524186.png"  />启动vps的cs server</p>
+</code></pre></div><p><figure style="flex-grow: 546; flex-basis: 1311px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105172524186.jpg" data-size="1350x247"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105172524186.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105172524186_hu2687d055722e8be6df45ff1e2cbf990b_35281_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105172524186_hu2687d055722e8be6df45ff1e2cbf990b_35281_1024x0_resize_q75_box.jpg 1024w"
+				width="1350"
+				height="247"
+				loading="lazy"
+				alt="image-20201105172524186.jpg">
+		</a>
+		
+		<figcaption>image-20201105172524186.jpg</figcaption>
+		
+	</figure>启动vps的cs server</p>
 <p><code>./teamserver vpsip fuckbibi</code></p>
 <ol start="2">
-<li>创建用来反向上线ab客户端的listener<img src="./image-20201105170031210.png" alt="image-20201105170031210.png"  /></li>
-<li>生成父beacon<img src="./image-20201105170206527.png" alt="image-20201105170206527.png"  /></li>
-<li>上传父beacon到ABPTTS客户端执行上线（其实就是上线你自己的攻击机）<img src="./image-20201105170405974.png" alt="image-20201105170405974.png"  /></li>
-<li>创建payload为tcp beacon的listener<img src="./image-20201105170833874.png" alt="image-20201105170833874.png"  /></li>
-<li>生成stageless的子beacon<img src="./image-20201105170943180.png" alt="image-20201105170943180.png"  /></li>
+<li>创建用来反向上线ab客户端的listener<figure style="flex-grow: 83; flex-basis: 201px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170031210.jpg" data-size="510x608"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170031210.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170031210_hu2241a80a696a93ca970922b568fbbac3_32309_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170031210_hu2241a80a696a93ca970922b568fbbac3_32309_1024x0_resize_q75_box.jpg 1024w"
+				width="510"
+				height="608"
+				loading="lazy"
+				alt="image-20201105170031210.jpg">
+		</a>
+		
+		<figcaption>image-20201105170031210.jpg</figcaption>
+		
+	</figure></li>
+<li>生成父beacon<figure style="flex-grow: 146; flex-basis: 351px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170206527.jpg" data-size="431x294"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170206527.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170206527_hu9086265d60fa17d4279249d5578b7d76_22295_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170206527_hu9086265d60fa17d4279249d5578b7d76_22295_1024x0_resize_q75_box.jpg 1024w"
+				width="431"
+				height="294"
+				loading="lazy"
+				alt="image-20201105170206527.jpg">
+		</a>
+		
+		<figcaption>image-20201105170206527.jpg</figcaption>
+		
+	</figure></li>
+<li>上传父beacon到ABPTTS客户端执行上线（其实就是上线你自己的攻击机）<figure style="flex-grow: 795; flex-basis: 1909px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170405974.jpg" data-size="1440x181"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170405974.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170405974_huf1e43e35832a13166e836ca0fc58befe_37361_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170405974_huf1e43e35832a13166e836ca0fc58befe_37361_1024x0_resize_q75_box.jpg 1024w"
+				width="1440"
+				height="181"
+				loading="lazy"
+				alt="image-20201105170405974.jpg">
+		</a>
+		
+		<figcaption>image-20201105170405974.jpg</figcaption>
+		
+	</figure></li>
+<li>创建payload为tcp beacon的listener<figure style="flex-grow: 87; flex-basis: 210px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170833874.jpg" data-size="491x561"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170833874.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170833874_hubc656f54a1da17de56ae1cff32a6d2f5_20266_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170833874_hubc656f54a1da17de56ae1cff32a6d2f5_20266_1024x0_resize_q75_box.jpg 1024w"
+				width="491"
+				height="561"
+				loading="lazy"
+				alt="image-20201105170833874.jpg">
+		</a>
+		
+		<figcaption>image-20201105170833874.jpg</figcaption>
+		
+	</figure></li>
+<li>生成stageless的子beacon<figure style="flex-grow: 143; flex-basis: 343px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170943180.jpg" data-size="428x299"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170943180.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170943180_hu1281c9e6b0b9a4ca691b093d91aefde5_22267_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105170943180_hu1281c9e6b0b9a4ca691b093d91aefde5_22267_1024x0_resize_q75_box.jpg 1024w"
+				width="428"
+				height="299"
+				loading="lazy"
+				alt="image-20201105170943180.jpg">
+		</a>
+		
+		<figcaption>image-20201105170943180.jpg</figcaption>
+		
+	</figure></li>
 <li>将生成的子beacon通过webshell上传执行</li>
 </ol>
 <pre><code># 可以通过webshell查看网络监听，确保子beacon执行成功
 netstat -ano
-</code></pre><p><img src="./image-20201105171346333.png" alt="image-20201105171346333.png"  />
+</code></pre><p><figure style="flex-grow: 466; flex-basis: 1120px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105171346333.jpg" data-size="826x177"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105171346333.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105171346333_hu43ed252719ce97a7a457fbc77ca117d2_22501_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105171346333_hu43ed252719ce97a7a457fbc77ca117d2_22501_1024x0_resize_q75_box.jpg 1024w"
+				width="826"
+				height="177"
+				loading="lazy"
+				alt="image-20201105171346333.jpg">
+		</a>
+		
+		<figcaption>image-20201105171346333.jpg</figcaption>
+		
+	</figure>
 7. 在父beacon中连接abptts的监听ip和端口
 <code>connect 127.0.0.1:4444</code></p>
-<p><img src="./image-20201105174955855.png" alt="image-20201105174955855.png"  /><img src="./image-20201105175021468.png" alt="image-20201105175021468.png"  /><img src="./image-20201105175146916.png" alt="image-20201105175146916.png"  /></p>
-<p> </p>
+<p><figure style="flex-grow: 978; flex-basis: 2349px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105174955855.jpg" data-size="1341x137"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105174955855.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105174955855_hu835dab2df92ef4541ed63bc7152c5039_24342_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105174955855_hu835dab2df92ef4541ed63bc7152c5039_24342_1024x0_resize_q75_box.jpg 1024w"
+				width="1341"
+				height="137"
+				loading="lazy"
+				alt="image-20201105174955855.jpg">
+		</a>
+		
+		<figcaption>image-20201105174955855.jpg</figcaption>
+		
+	</figure></p>
+<p><figure style="flex-grow: 191; flex-basis: 460px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175021468.jpg" data-size="1440x751"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175021468.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175021468_hu8d2a48394145cda9ce9f7559f2c4c079_194891_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175021468_hu8d2a48394145cda9ce9f7559f2c4c079_194891_1024x0_resize_q75_box.jpg 1024w"
+				width="1440"
+				height="751"
+				loading="lazy"
+				alt="image-20201105175021468.jpg">
+		</a>
+		
+		<figcaption>image-20201105175021468.jpg</figcaption>
+		
+	</figure></p>
+<p><figure style="flex-grow: 191; flex-basis: 460px">
+		<a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175146916.jpg" data-size="1440x751"><img src="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175146916.jpg"
+				srcset="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175146916_hu8d2a48394145cda9ce9f7559f2c4c079_86293_480x0_resize_q75_box.jpg 480w, /p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/image-20201105175146916_hu8d2a48394145cda9ce9f7559f2c4c079_86293_1024x0_resize_q75_box.jpg 1024w"
+				width="1440"
+				height="751"
+				loading="lazy"
+				alt="image-20201105175146916.jpg">
+		</a>
+		
+		<figcaption>image-20201105175146916.jpg</figcaption>
+		
+	</figure></p>
 
 </section>
 
