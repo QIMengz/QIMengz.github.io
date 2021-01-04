@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='内网穿透--ABPTTS正向代理cs上线'><title>内网穿透--ABPTTS正向代理cs上线</title>
+
+<link rel='canonical' href='http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='内网穿透--ABPTTS正向代理cs上线'>
+<meta property='og:description' content='内网穿透--ABPTTS正向代理cs上线'>
+<meta property='og:url' content='http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/'>
+<meta property='og:site_name' content='808Mak1r'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='内网' /><meta property='article:tag' content='cs' /><meta property='article:tag' content='穿透' /><meta property='article:published_time' content='2021-01-04T09:05:03&#43;08:00'/><meta property='article:modified_time' content='2021-01-04T09:05:03&#43;08:00'/>
+<meta name="twitter:title" content="内网穿透--ABPTTS正向代理cs上线">
+<meta name="twitter:description" content="内网穿透--ABPTTS正向代理cs上线">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu639e11651d22d4499f5a1ba9543dc353_27179_300x0_resize_box_2.png" width="300"
+                            height="301" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://808Mak1r.github.io">808Mak1r</a></h1>
+        <h2 class="site-description">kekeke~~~</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://808Mak1r.github.io" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%B8%97%E9%80%8F/" >
+                渗透
+            </a>
+        
+            <a href="/categories/%E5%86%85%E7%BD%91/" >
+                内网
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/">内网穿透--ABPTTS正向代理cs上线</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        内网穿透--ABPTTS正向代理cs上线
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jan 04, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="内网穿透--abptts正向代理cs上线">内网穿透&ndash;ABPTTS正向代理cs上线</h1>
+<h2 id="内网穿透原理">内网穿透原理</h2>
+<p><strong>内网穿透是:利用各种隧道技术，以网络防火墙允许的协议，绕过网络防火墙的封锁，实现访问被封锁的目标网络。</strong></p>
+<blockquote>
+<p>隧道技术是一种通过使用互联网络的基础设施在网络之间传递数据的方式。使用隧道传递的数据(或负载)可以是不同协议的数据帧或包。隧道协议将这些其他协议的数据帧或包重新封装在新的包头中发送。新的包头提供了路由信息，从而使封装的负载数据能够通过互联网络传递。被封装的数据包在隧道的两个端点之间通过公共互联网络进行路由。被封装的数据包在公共互联网络上传递时所经过的逻辑路径称为隧道。一旦到达网络终点，数据将被解包并转发到最终目的地。注意隧道技术是指包括数据封装、传输和解包在内的全过程。</p>
+</blockquote>
+<p>我们进行内网渗透常用的隧道技术有dns隧道、http隧道、ssh隧道、icmp隧道等容易被网络防火墙放行的协议。</p>
+<h2 id="内网穿透--应用层隧道工具">内网穿透&ndash;应用层隧道工具</h2>
+<p>由于应用层协议极多，对应的隧道工具也很多，我们常用来做隧道的协议一般是DNS、HTTP、SSH、SOCKS等</p>
+<p><a class="link" href="https://github.com/nccgroup/ABPTTS"  target="_blank" rel="noopener"
+    >ABPTTS</a></p>
+<p>TCP over HTTP,即通过HTTP隧道转发TCP连接,数据加密，可自定义HTTP数据，对抗特征检测十分优秀，创建的隧道十分稳定，比较遗憾的是支持的web脚本类型只有aspx和jsp</p>
+<h3 id="环境配置">环境配置</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python2编写</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">httplib2</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pycrypto</span>
+</code></pre></div><h2 id="内网实战--利用abptts上线不出网的主机至cs">内网实战&ndash;利用ABPTTS上线不出网的主机至cs</h2>
+<p>**实战背景：**获取了webshell的主机位于内网，并且该内网主机icmp等网络层协议不能出网，tcp和udp等传输层协议不能出网，dns、http等应用层协议也不能出网，唯一的数据通道是反向代理入网的web应用。</p>
+<p><strong>方案设计</strong>：利用反向代理入网的web应用所在的HTTP连接，构建正向的<code>TCP over HTTP</code>隧道。通过这条隧道，我们可以向内网主机发起tcp连接。生成bind类型的payload，通过webshell上传执行就会监听一个端口，我们的远控平台通过构建的<code>TCP over HTTP</code>隧道，去连接监听的端口即可上线。
+能构建<code>TCP over HTTP</code>的隧道的工具有<code>ABPTTS、Tunna、reDuh</code>等，由于<code>Tunna、reDuh</code>构建的tcp连接不稳定，这里选用<code>ABPTTS</code>。</p>
+<h3 id="上线cs">上线cs</h3>
+<p><strong>由于cobaltstrike的bind类型的监听器仅有beacon TCP和beacon SMB，并且都必须连接到父beacon，无法直接连接cobalstrike服务端，所以我们需要一个父beacon来中转连接。</strong></p>
+<ol>
+<li>生成server脚本</li>
+</ol>
+<p><code>python abpttsfactory.py -o server</code></p>
+<p>上传到web并在client执行</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python2</span> <span class="n">abpttsclient</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">c</span> <span class="n">server</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&#34;http://xx.com/tyu.jsp&#34;</span> <span class="o">-</span><span class="n">f</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">4444</span><span class="o">/</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">12344</span>
+<span class="c1"># abptts客户端监听127.0.0.1:7777，通过http://192.168.168.121/abptts.aspx这个http隧道，将tcp连接127.0.0.1:7777转发到web服务器网络下的127.0.0.1:8888</span>
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257401937-5520dc90-5e9d-4ab1-9b2e-542610dea243.png#align=left&amp;display=inline&amp;height=247&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105172524186.png&amp;originHeight=247&amp;originWidth=1350&amp;size=35281&amp;status=done&amp;style=none&amp;width=1350" alt="image-20201105172524186.png"  />启动vps的cs server</p>
+<p><code>./teamserver vpsip fuckbibi</code></p>
+<ol start="2">
+<li>创建用来反向上线ab客户端的listener<img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256071225-e9509745-9e4f-4773-ba66-44335a41718d.png#align=left&amp;display=inline&amp;height=608&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105170031210.png&amp;originHeight=608&amp;originWidth=510&amp;size=32309&amp;status=done&amp;style=none&amp;width=510" alt="image-20201105170031210.png"  /></li>
+<li>生成父beacon<img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256088142-f3cce84e-6786-4d84-9b2e-5691f88f90ea.png#align=left&amp;display=inline&amp;height=294&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105170206527.png&amp;originHeight=294&amp;originWidth=431&amp;size=22295&amp;status=done&amp;style=none&amp;width=431" alt="image-20201105170206527.png"  /></li>
+<li>上传父beacon到ABPTTS客户端执行上线（其实就是上线你自己的攻击机）<img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257422248-a557e0c1-83f0-411c-9490-81f637074c64.png#align=left&amp;display=inline&amp;height=241&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105170405974.png&amp;originHeight=241&amp;originWidth=1920&amp;size=32949&amp;status=done&amp;style=none&amp;width=1920" alt="image-20201105170405974.png"  /></li>
+<li>创建payload为tcp beacon的listener<img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256118441-12cfe4cb-fa83-4bf6-8f1e-e6e08139f9d0.png#align=left&amp;display=inline&amp;height=561&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105170833874.png&amp;originHeight=561&amp;originWidth=491&amp;size=20266&amp;status=done&amp;style=none&amp;width=491" alt="image-20201105170833874.png"  /></li>
+<li>生成stageless的子beacon<img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256133165-b3e12db7-b8e5-44f1-8667-009b4c136981.png#align=left&amp;display=inline&amp;height=299&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105170943180.png&amp;originHeight=299&amp;originWidth=428&amp;size=22267&amp;status=done&amp;style=none&amp;width=428" alt="image-20201105170943180.png"  /></li>
+<li>将生成的子beacon通过webshell上传执行</li>
+</ol>
+<pre><code># 可以通过webshell查看网络监听，确保子beacon执行成功
+netstat -ano
+</code></pre><p><img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256165815-231bf649-217f-4c08-8b14-589341c7a356.png#align=left&amp;display=inline&amp;height=177&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105171346333.png&amp;originHeight=177&amp;originWidth=826&amp;size=22501&amp;status=done&amp;style=none&amp;width=826" alt="image-20201105171346333.png"  />
+7. 在父beacon中连接abptts的监听ip和端口
+<code>connect 127.0.0.1:4444</code></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257449566-1e64d160-63e5-4e57-99b1-bb39fd70295f.png#align=left&amp;display=inline&amp;height=137&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105174955855.png&amp;originHeight=137&amp;originWidth=1341&amp;size=24342&amp;status=done&amp;style=none&amp;width=1341" alt="image-20201105174955855.png"  /><img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257468000-88b1ba5a-2ea3-47e9-867f-de95a9dbe9b5.png#align=left&amp;display=inline&amp;height=1001&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105175021468.png&amp;originHeight=1001&amp;originWidth=1920&amp;size=103400&amp;status=done&amp;style=none&amp;width=1920" alt="image-20201105175021468.png"  /><img src="https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257493566-dede98a0-821e-448c-bd74-1b00809ce973.png#align=left&amp;display=inline&amp;height=1001&amp;margin=%5Bobject%20Object%5D&amp;name=image-20201105175146916.png&amp;originHeight=1001&amp;originWidth=1920&amp;size=64326&amp;status=done&amp;style=none&amp;width=1920" alt="image-20201105175146916.png"  /></p>
+<p> </p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%86%85%E7%BD%91/">内网</a>
+        
+            <a href="/tags/cs/">cs</a>
+        
+            <a href="/tags/%E7%A9%BF%E9%80%8F/">穿透</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2019 - 
+        
+        2021 808Mak1r
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

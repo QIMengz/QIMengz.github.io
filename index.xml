@@ -6,7 +6,61 @@
         <description>Recent content on 808Mak1r</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 20 Aug 2019 17:57:12 +0800</lastBuildDate><atom:link href="http://808Mak1r.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 04 Jan 2021 09:05:03 +0800</lastBuildDate><atom:link href="http://808Mak1r.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>内网穿透--ABPTTS正向代理cs上线</title>
+        <link>http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/</link>
+        <pubDate>Mon, 04 Jan 2021 09:05:03 +0800</pubDate>
+        
+        <guid>http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/</guid>
+        <description>&lt;h1 id=&#34;内网穿透--abptts正向代理cs上线&#34;&gt;内网穿透&amp;ndash;ABPTTS正向代理cs上线&lt;/h1&gt;
+&lt;h2 id=&#34;内网穿透原理&#34;&gt;内网穿透原理&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;内网穿透是:利用各种隧道技术，以网络防火墙允许的协议，绕过网络防火墙的封锁，实现访问被封锁的目标网络。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;隧道技术是一种通过使用互联网络的基础设施在网络之间传递数据的方式。使用隧道传递的数据(或负载)可以是不同协议的数据帧或包。隧道协议将这些其他协议的数据帧或包重新封装在新的包头中发送。新的包头提供了路由信息，从而使封装的负载数据能够通过互联网络传递。被封装的数据包在隧道的两个端点之间通过公共互联网络进行路由。被封装的数据包在公共互联网络上传递时所经过的逻辑路径称为隧道。一旦到达网络终点，数据将被解包并转发到最终目的地。注意隧道技术是指包括数据封装、传输和解包在内的全过程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们进行内网渗透常用的隧道技术有dns隧道、http隧道、ssh隧道、icmp隧道等容易被网络防火墙放行的协议。&lt;/p&gt;
+&lt;h2 id=&#34;内网穿透--应用层隧道工具&#34;&gt;内网穿透&amp;ndash;应用层隧道工具&lt;/h2&gt;
+&lt;p&gt;由于应用层协议极多，对应的隧道工具也很多，我们常用来做隧道的协议一般是DNS、HTTP、SSH、SOCKS等&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nccgroup/ABPTTS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ABPTTS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TCP over HTTP,即通过HTTP隧道转发TCP连接,数据加密，可自定义HTTP数据，对抗特征检测十分优秀，创建的隧道十分稳定，比较遗憾的是支持的web脚本类型只有aspx和jsp&lt;/p&gt;
+&lt;h3 id=&#34;环境配置&#34;&gt;环境配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# python2编写&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;httplib2&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pycrypto&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;内网实战--利用abptts上线不出网的主机至cs&#34;&gt;内网实战&amp;ndash;利用ABPTTS上线不出网的主机至cs&lt;/h2&gt;
+&lt;p&gt;**实战背景：**获取了webshell的主机位于内网，并且该内网主机icmp等网络层协议不能出网，tcp和udp等传输层协议不能出网，dns、http等应用层协议也不能出网，唯一的数据通道是反向代理入网的web应用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方案设计&lt;/strong&gt;：利用反向代理入网的web应用所在的HTTP连接，构建正向的&lt;code&gt;TCP over HTTP&lt;/code&gt;隧道。通过这条隧道，我们可以向内网主机发起tcp连接。生成bind类型的payload，通过webshell上传执行就会监听一个端口，我们的远控平台通过构建的&lt;code&gt;TCP over HTTP&lt;/code&gt;隧道，去连接监听的端口即可上线。
+能构建&lt;code&gt;TCP over HTTP&lt;/code&gt;的隧道的工具有&lt;code&gt;ABPTTS、Tunna、reDuh&lt;/code&gt;等，由于&lt;code&gt;Tunna、reDuh&lt;/code&gt;构建的tcp连接不稳定，这里选用&lt;code&gt;ABPTTS&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;上线cs&#34;&gt;上线cs&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;由于cobaltstrike的bind类型的监听器仅有beacon TCP和beacon SMB，并且都必须连接到父beacon，无法直接连接cobalstrike服务端，所以我们需要一个父beacon来中转连接。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;生成server脚本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;python abpttsfactory.py -o server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;上传到web并在client执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;python2&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abpttsclient&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;py&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;txt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://xx.com/tyu.jsp&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;127.0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4444&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;127.0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;12344&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# abptts客户端监听127.0.0.1:7777，通过http://192.168.168.121/abptts.aspx这个http隧道，将tcp连接127.0.0.1:7777转发到web服务器网络下的127.0.0.1:8888&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257401937-5520dc90-5e9d-4ab1-9b2e-542610dea243.png#align=left&amp;amp;display=inline&amp;amp;height=247&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105172524186.png&amp;amp;originHeight=247&amp;amp;originWidth=1350&amp;amp;size=35281&amp;amp;status=done&amp;amp;style=none&amp;amp;width=1350&#34; alt=&#34;image-20201105172524186.png&#34;  /&gt;启动vps的cs server&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./teamserver vpsip fuckbibi&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;创建用来反向上线ab客户端的listener&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256071225-e9509745-9e4f-4773-ba66-44335a41718d.png#align=left&amp;amp;display=inline&amp;amp;height=608&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105170031210.png&amp;amp;originHeight=608&amp;amp;originWidth=510&amp;amp;size=32309&amp;amp;status=done&amp;amp;style=none&amp;amp;width=510&#34; alt=&#34;image-20201105170031210.png&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;生成父beacon&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256088142-f3cce84e-6786-4d84-9b2e-5691f88f90ea.png#align=left&amp;amp;display=inline&amp;amp;height=294&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105170206527.png&amp;amp;originHeight=294&amp;amp;originWidth=431&amp;amp;size=22295&amp;amp;status=done&amp;amp;style=none&amp;amp;width=431&#34; alt=&#34;image-20201105170206527.png&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;上传父beacon到ABPTTS客户端执行上线（其实就是上线你自己的攻击机）&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257422248-a557e0c1-83f0-411c-9490-81f637074c64.png#align=left&amp;amp;display=inline&amp;amp;height=241&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105170405974.png&amp;amp;originHeight=241&amp;amp;originWidth=1920&amp;amp;size=32949&amp;amp;status=done&amp;amp;style=none&amp;amp;width=1920&#34; alt=&#34;image-20201105170405974.png&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;创建payload为tcp beacon的listener&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256118441-12cfe4cb-fa83-4bf6-8f1e-e6e08139f9d0.png#align=left&amp;amp;display=inline&amp;amp;height=561&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105170833874.png&amp;amp;originHeight=561&amp;amp;originWidth=491&amp;amp;size=20266&amp;amp;status=done&amp;amp;style=none&amp;amp;width=491&#34; alt=&#34;image-20201105170833874.png&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;生成stageless的子beacon&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256133165-b3e12db7-b8e5-44f1-8667-009b4c136981.png#align=left&amp;amp;display=inline&amp;amp;height=299&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105170943180.png&amp;amp;originHeight=299&amp;amp;originWidth=428&amp;amp;size=22267&amp;amp;status=done&amp;amp;style=none&amp;amp;width=428&#34; alt=&#34;image-20201105170943180.png&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;将生成的子beacon通过webshell上传执行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;# 可以通过webshell查看网络监听，确保子beacon执行成功
+netstat -ano
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605256165815-231bf649-217f-4c08-8b14-589341c7a356.png#align=left&amp;amp;display=inline&amp;amp;height=177&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105171346333.png&amp;amp;originHeight=177&amp;amp;originWidth=826&amp;amp;size=22501&amp;amp;status=done&amp;amp;style=none&amp;amp;width=826&#34; alt=&#34;image-20201105171346333.png&#34;  /&gt;
+7. 在父beacon中连接abptts的监听ip和端口
+&lt;code&gt;connect 127.0.0.1:4444&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257449566-1e64d160-63e5-4e57-99b1-bb39fd70295f.png#align=left&amp;amp;display=inline&amp;amp;height=137&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105174955855.png&amp;amp;originHeight=137&amp;amp;originWidth=1341&amp;amp;size=24342&amp;amp;status=done&amp;amp;style=none&amp;amp;width=1341&#34; alt=&#34;image-20201105174955855.png&#34;  /&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257468000-88b1ba5a-2ea3-47e9-867f-de95a9dbe9b5.png#align=left&amp;amp;display=inline&amp;amp;height=1001&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105175021468.png&amp;amp;originHeight=1001&amp;amp;originWidth=1920&amp;amp;size=103400&amp;amp;status=done&amp;amp;style=none&amp;amp;width=1920&#34; alt=&#34;image-20201105175021468.png&#34;  /&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2020/png/2842503/1605257493566-dede98a0-821e-448c-bd74-1b00809ce973.png#align=left&amp;amp;display=inline&amp;amp;height=1001&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image-20201105175146916.png&amp;amp;originHeight=1001&amp;amp;originWidth=1920&amp;amp;size=64326&amp;amp;status=done&amp;amp;style=none&amp;amp;width=1920&#34; alt=&#34;image-20201105175146916.png&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>试着去理解虚拟DOM</title>
         <link>http://808Mak1r.github.io/p/test-post/</link>
         <pubDate>Tue, 20 Aug 2019 17:57:12 +0800</pubDate>

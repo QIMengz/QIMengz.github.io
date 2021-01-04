@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内网 on 808Mak1r</title>
+    <link>http://808Mak1r.github.io/tags/%E5%86%85%E7%BD%91/</link>
+    <description>Recent content in 内网 on 808Mak1r</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jan 2021 09:05:03 +0800</lastBuildDate><atom:link href="http://808Mak1r.github.io/tags/%E5%86%85%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内网穿透--ABPTTS正向代理cs上线</title>
+      <link>http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/</link>
+      <pubDate>Mon, 04 Jan 2021 09:05:03 +0800</pubDate>
+      
+      <guid>http://808Mak1r.github.io/p/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-abptts%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/</guid>
+      <description>内网穿透&amp;ndash;ABPTTS正向代理cs上线 内网穿透原理 内网穿透是:利用各种隧道技术，以网络防火墙允许的协议，绕过网络防火墙的封锁，实现访问被封锁的目标网络。
+ 隧道技术是一种通过使用互联网络的基础设施在网络之间传递数据的方式。使用隧道传递的数据(或负载)可以是不同协议的数据帧或包。隧道协议将这些其他协议的数据帧或包重新封装在新的包头中发送。新的包头提供了路由信息，从而使封装的负载数据能够通过互联网络传递。被封装的数据包在隧道的两个端点之间通过公共互联网络进行路由。被封装的数据包在公共互联网络上传递时所经过的逻辑路径称为隧道。一旦到达网络终点，数据将被解包并转发到最终目的地。注意隧道技术是指包括数据封装、传输和解包在内的全过程。
+ 我们进行内网渗透常用的隧道技术有dns隧道、http隧道、ssh隧道、icmp隧道等容易被网络防火墙放行的协议。
+内网穿透&amp;ndash;应用层隧道工具 由于应用层协议极多，对应的隧道工具也很多，我们常用来做隧道的协议一般是DNS、HTTP、SSH、SOCKS等
+ABPTTS
+TCP over HTTP,即通过HTTP隧道转发TCP连接,数据加密，可自定义HTTP数据，对抗特征检测十分优秀，创建的隧道十分稳定，比较遗憾的是支持的web脚本类型只有aspx和jsp
+环境配置 # python2编写 pip install httplib2 pip install pycrypto 内网实战&amp;ndash;利用ABPTTS上线不出网的主机至cs **实战背景：**获取了webshell的主机位于内网，并且该内网主机icmp等网络层协议不能出网，tcp和udp等传输层协议不能出网，dns、http等应用层协议也不能出网，唯一的数据通道是反向代理入网的web应用。
+方案设计：利用反向代理入网的web应用所在的HTTP连接，构建正向的TCP over HTTP隧道。通过这条隧道，我们可以向内网主机发起tcp连接。生成bind类型的payload，通过webshell上传执行就会监听一个端口，我们的远控平台通过构建的TCP over HTTP隧道，去连接监听的端口即可上线。 能构建TCP over HTTP的隧道的工具有ABPTTS、Tunna、reDuh等，由于Tunna、reDuh构建的tcp连接不稳定，这里选用ABPTTS。
+上线cs 由于cobaltstrike的bind类型的监听器仅有beacon TCP和beacon SMB，并且都必须连接到父beacon，无法直接连接cobalstrike服务端，所以我们需要一个父beacon来中转连接。
+ 生成server脚本  python abpttsfactory.py -o server
+上传到web并在client执行
+python2 abpttsclient.py -c server/config.txt -u &amp;#34;http://xx.com/tyu.jsp&amp;#34; -f 127.0.0.1:4444/127.0.0.1:12344 # abptts客户端监听127.0.0.1:7777，通过http://192.168.168.121/abptts.aspx这个http隧道，将tcp连接127.0.0.1:7777转发到web服务器网络下的127.0.0.1:8888 启动vps的cs server
+./teamserver vpsip fuckbibi
+创建用来反向上线ab客户端的listener 生成父beacon 上传父beacon到ABPTTS客户端执行上线（其实就是上线你自己的攻击机） 创建payload为tcp beacon的listener 生成stageless的子beacon 将生成的子beacon通过webshell上传执行  # 可以通过webshell查看网络监听，确保子beacon执行成功 netstat -ano 7.</description>
+    </item>
+    
+  </channel>
+</rss>
